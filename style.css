@@ -78,11 +78,11 @@ nav li {
   overflow: hidden;
 }
 nav li:nth-child(1) { margin-left: 0vw; }
-nav li:nth-child(2) { margin-left: 5vw; }
-nav li:nth-child(3) { margin-left: -4vw; }
-nav li:nth-child(4) { margin-left: 7vw; }
-nav li:nth-child(5) { margin-left: -6vw; }
-nav li:nth-child(6) { margin-left: 3vw; }
+nav li:nth-child(2) { margin-left: 2vw; }
+nav li:nth-child(3) { margin-left: -1vw; }
+nav li:nth-child(4) { margin-left: 3vw; }
+nav li:nth-child(5) { margin-left: -2vw; }
+nav li:nth-child(6) { margin-left: 1vw; }
 
 nav a {
   color: #000;
@@ -107,14 +107,12 @@ nav a:hover, nav a:focus {
 }
 
 nav a.blink {
-  animation: blink-blue 0.8s linear 0s 4 alternate;
+  animation: blink-blue 0.15s linear 0s 10 alternate;
 }
 @keyframes blink-blue {
   0% { color: #000; }
-  25% { color: #1976d2; }
-  50% { color: #fff; }
-  75% { color: #1976d2; }
-  100% { color: #000; }
+  50% { color: #1976d2; }
+  100% { color: #888; }
 }
 
 .corner-image {
