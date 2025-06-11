@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   overflow-x: hidden;
 }
@@ -39,7 +39,7 @@ header {
 }
 
 h1 {
-  margin: 0 0 2vw 0;
+  margin: 7vw 0 2vw 0;
   font-size: 2.8vw;
   font-family: 'Syne', Arial, sans-serif;
   font-weight: 600;
@@ -47,47 +47,42 @@ h1 {
   letter-spacing: 0.08em;
   text-align: center;
   line-height: 1.1;
-  position: relative;
-  top: 8vw;
   z-index: 2;
   transition: color 0.3s;
 }
 
 nav {
-  padding: 0;
-  margin: 0 auto;
   width: 100vw;
-  max-width: 100vw;
-  position: relative;
-  height: 22vw;
+  max-width: 700px;
+  margin: 0 auto 0 auto;
+  padding: 0;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  position: absolute;
-  left: 0; right: 0;
-  top: 0;
-  width: 100vw;
-  height: 22vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
   max-width: 700px;
 }
 
 nav li {
-  position: absolute;
-  width: max-content;
-  max-width: 90vw;
-  text-align: center;
+  margin-bottom: 1.7vw;
+  width: 100%;
+  text-align: left;
   white-space: pre;
   overflow: hidden;
 }
-nav li:nth-child(1) { left: 50%; top: 0vw; transform: translate(-50%, 0); }
-nav li:nth-child(2) { left: 55vw; top: 3vw; transform: none; }
-nav li:nth-child(3) { left: 35vw; top: 6vw; transform: none; }
-nav li:nth-child(4) { left: 60vw; top: 9vw; transform: none; }
-nav li:nth-child(5) { left: 30vw; top: 13vw; transform: none; }
-nav li:nth-child(6) { left: 50vw; top: 16vw; transform: none; }
+nav li:nth-child(1) { margin-left: 0vw; }
+nav li:nth-child(2) { margin-left: 5vw; }
+nav li:nth-child(3) { margin-left: -4vw; }
+nav li:nth-child(4) { margin-left: 7vw; }
+nav li:nth-child(5) { margin-left: -6vw; }
+nav li:nth-child(6) { margin-left: 3vw; }
 
 nav a {
   color: #000;
@@ -97,8 +92,6 @@ nav a {
   font-weight: 400;
   letter-spacing: 0.04em;
   display: inline-block;
-  position: relative;
-  z-index: 1;
   border-radius: 0.3em;
   padding: 0.1em 0.3em;
   background: none;
@@ -208,10 +201,13 @@ nav a.blink {
 @media (max-width: 700px) {
   h1 {
     font-size: 2.2rem;
-    top: 8vw;
+    margin-top: 2vw;
   }
   nav a {
     font-size: 1.1rem;
+  }
+  nav ul {
+    align-items: flex-start;
   }
   .corner-image {
     width: 90vw;
