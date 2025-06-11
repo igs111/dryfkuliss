@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <link rel="icon" href="ikona.ico" type="image/x-icon">
- <meta charset="UTF-8">
+ <link rel="icon" href="ikona.ico" type="image/x-icon">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dryf Kulis</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <h1 style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;">Dryf Kulis</h1>
   </div>
   <div class="links-cloud">
-    <a id="presave-link" href="https://distrokid.com/hyperfollow/dryfkulis/dryfowanie" target="_blank" style="top:12%; left:52%;">"D  r   y    f     o      w       a        n         i          e"   P  r  e - s  a  v  e</a>
+    <a id="presave-link" href="https://distrokid.com/hyperfollow/dryfkulis/dryfowanie" target="_blank" style="top:12%; left:20%;">"D  r   y    f     o      w       a        n         i          e"   P  r  e - s  a  v  e</a>
     <a href="https://open.spotify.com/artist/0HCypyxxGMdbQxeGFpHUug" target="_blank" style="top:32%; left:70%;">s  p   o    t     i      f       y</a>
     <a href="https://music.apple.com/pl/artist/iqciu/1637684331" target="_blank" style="top:65%; left:40%;">a  p  p   l    e       m   u    s     i      c</a>
     <a href="https://www.tiktok.com/@dryfkulis" target="_blank" style="top:75%; left:35%;">t i  k   t    o     k</a>
@@ -23,13 +23,6 @@
   </div>
   <div class="corner-image">
     <!-- <img src="twoj-obrazek.png" alt="dryf kulis"> -->
-  </div>
-  <button class="show-trailer-btn" id="showTrailerBtn" style="display:none;">Pokaż trailer</button>
-  <div class="trailer-widget" id="trailerWidget">
-    <div class="trailer-label">Dryfowanie Trailer</div>
-    <video id="trailerVideo" src="trailer.mp4" poster="trailer-poster.jpg" controls muted></video>
-    <button class="trailer-btn" id="trailerBtn">Zobacz na YouTube</button>
-    <iframe class="trailer-youtube" id="trailerYT" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" allowfullscreen></iframe>
   </div>
   <script>
     // Miganie linku presave od razu po wejściu i co 5s
@@ -40,31 +33,6 @@
     }
     blinkPresave();
     setInterval(blinkPresave, 5000);
-    // Trailer widget - zamiana na YouTube
-    document.getElementById('trailerBtn').onclick = function() {
-      document.getElementById('trailerWidget').classList.add('active');
-    };
-    // Mobilny przycisk do pokazywania trailera
-    function isMobile() {
-      return window.innerWidth <= 700;
-    }
-    function showTrailerBtnIfMobile() {
-      var btn = document.getElementById('showTrailerBtn');
-      var widget = document.getElementById('trailerWidget');
-      if(isMobile()) {
-        btn.style.display = 'block';
-        widget.classList.remove('active');
-      } else {
-        btn.style.display = 'none';
-        widget.classList.add('active');
-      }
-    }
-    showTrailerBtnIfMobile();
-    window.addEventListener('resize', showTrailerBtnIfMobile);
-    document.getElementById('showTrailerBtn').onclick = function() {
-      document.getElementById('trailerWidget').classList.add('active');
-      this.style.display = 'none';
-    };
   </script>
 </body>
 </html>
