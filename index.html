@@ -15,7 +15,7 @@
   <main>
     <nav>
       <ul>
-        <li><a href="https://distrokid.com/hyperfollow/dryfkulis/dryfowanie" target="_blank">"D  r   y    f     o      w       a        n         i          e"   P  r  e - s  a  v  e</a></li>
+        <li><a id="presave-link" href="https://distrokid.com/hyperfollow/dryfkulis/dryfowanie" target="_blank">"D  r   y    f     o      w       a        n         i          e"   P  r  e - s  a  v  e</a></li>
         <li><a href="https://open.spotify.com/artist/0HCypyxxGMdbQxeGFpHUug" target="_blank">s  p   o    t     i      f       y</a></li>
         <li><a href="https://music.apple.com/pl/artist/iqciu/1637684331" target="_blank">a  p  p   l    e       m   u    s     i      c</a></li>
         <li><a href="https://www.tiktok.com/@dryfkulis" target="_blank">t i  k   t    o     k</a></li>
@@ -34,12 +34,12 @@
     <iframe class="trailer-youtube" id="trailerYT" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" allowfullscreen></iframe>
   </div>
   <script>
-    // Animacja wejścia linków
-    window.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        document.body.classList.add('loaded');
-      }, 120);
-    });
+    // Miganie linku presave co 5s
+    setInterval(function() {
+      var el = document.getElementById('presave-link');
+      el.classList.add('blink');
+      setTimeout(function() { el.classList.remove('blink'); }, 3200);
+    }, 5000);
     // Trailer widget - zamiana na YouTube
     document.getElementById('trailerBtn').onclick = function() {
       document.getElementById('trailerWidget').classList.add('active');
