@@ -10,7 +10,7 @@ body {
   min-width: 100vw;
   box-sizing: border-box;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   overflow-y: auto;
 }
 
@@ -202,42 +202,5 @@ h1 {
     height: 30vh;
     right: 0;
     bottom: 0;
-  }
-  .trailer-widget {
-    width: 90vw;
-    max-width: 90vw;
-    right: 2vw;
-    bottom: 2vw;
-    padding: 0.4em 0.1em 0.4em 0.1em;
-    box-sizing: border-box;
-    min-width: 0;
-    display: none;
-  }
-  .trailer-widget.active {
-    display: flex;
-  }
-  .trailer-widget video,
-  .trailer-widget .trailer-youtube {
-    max-height: 28vh;
-    min-width: 0;
-    width: 100%;
-    border-radius: 10px;
-  }
-  .show-trailer-btn {
-    display: block;
-    position: fixed;
-    left: 50%;
-    bottom: 1.5vh;
-    transform: translateX(-50%);
-    z-index: 200;
-    background: #ededed;
-    color: #222;
-    border: none;
-    border-radius: 0.5em;
-    padding: 0.7em 2em;
-    font-size: 1.1em;
-    font-family: 'Syne', Arial, sans-serif;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   }
 }
