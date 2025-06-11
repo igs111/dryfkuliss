@@ -64,7 +64,7 @@ nav ul {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   width: 100%;
   max-width: 700px;
@@ -73,16 +73,16 @@ nav ul {
 nav li {
   margin-bottom: 1.7vw;
   width: 100%;
-  text-align: left;
+  text-align: center;
   white-space: pre;
   overflow: hidden;
 }
 nav li:nth-child(1) { margin-left: 0vw; }
-nav li:nth-child(2) { margin-left: 2vw; }
+nav li:nth-child(2) { margin-left: 1vw; }
 nav li:nth-child(3) { margin-left: -1vw; }
-nav li:nth-child(4) { margin-left: 3vw; }
-nav li:nth-child(5) { margin-left: -2vw; }
-nav li:nth-child(6) { margin-left: 1vw; }
+nav li:nth-child(4) { margin-left: 1vw; }
+nav li:nth-child(5) { margin-left: -1vw; }
+nav li:nth-child(6) { margin-left: 0vw; }
 
 nav a {
   color: #000;
@@ -107,12 +107,12 @@ nav a:hover, nav a:focus {
 }
 
 nav a.blink {
-  animation: blink-blue 0.15s linear 0s 10 alternate;
+  animation: blink-blue 0.08s linear 0s 18 alternate;
 }
 @keyframes blink-blue {
   0% { color: #000; }
-  50% { color: #1976d2; }
-  100% { color: #888; }
+  50% { color: #888; }
+  100% { color: #1976d2; }
 }
 
 .corner-image {
@@ -205,7 +205,7 @@ nav a.blink {
     font-size: 1.1rem;
   }
   nav ul {
-    align-items: flex-start;
+    align-items: center;
   }
   .corner-image {
     width: 90vw;
