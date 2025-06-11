@@ -6,6 +6,9 @@
   <title>Dryf Kulis</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    html, body { height: 100%; }
+  </style>
 </head>
 <body>
   <header>
@@ -13,18 +16,36 @@
   </header>
   <main>
     <nav>
-      <ul style="white-space: pre; font-size: 2vw; line-height: 2.7vw; margin: 0; padding: 0; list-style: none;">
-        <li style="margin-left: 0vw;">  <a href="https://distrokid.com/hyperfollow/dryfkulis/dryfowanie" target="_blank">"D  r  y  f  o  w  a  n  i  e"   P  r  e - s  a  v  e</a></li>
-        <li style="margin-left: 12vw;">      <a href="https://open.spotify.com/artist/0HCypyxxGMdbQxeGFpHUug" target="_blank">s  p  o  t  i  f  y</a></li>
-        <li style="margin-left: -10vw;">    <a href="https://music.apple.com/pl/artist/iqciu/1637684331" target="_blank">a  p  p  l  e     m  u  s  i  c</a></li>
-        <li style="margin-left: 18vw;">            <a href="https://www.tiktok.com/@dryfkulis" target="_blank">t i k t o k</a></li>
-        <li style="margin-left: -18vw;">            <a href="https://www.instagram.com/dryfkulis/" target="_blank">i  n  s  t  a  g  r  a  m</a></li>
-        <li style="margin-left: 7vw;">      <a href="https://www.youtube.com/@dryfkulis" target="_blank">y o u t u b e</a></li>
+      <ul>
+        <li><a href="https://distrokid.com/hyperfollow/dryfkulis/dryfowanie" target="_blank">"D  r  y  f  o  w  a  n  i  e"   P  r  e - s  a  v  e</a></li>
+        <li><a href="https://open.spotify.com/artist/0HCypyxxGMdbQxeGFpHUug" target="_blank">s  p  o  t  i  f  y</a></li>
+        <li><a href="https://music.apple.com/pl/artist/iqciu/1637684331" target="_blank">a  p  p  l  e     m  u  s  i  c</a></li>
+        <li><a href="https://www.tiktok.com/@dryfkulis" target="_blank">t i k t o k</a></li>
+        <li><a href="https://www.instagram.com/dryfkulis/" target="_blank">i  n  s  t  a  g  r  a  m</a></li>
+        <li><a href="https://www.youtube.com/@dryfkulis" target="_blank">y o u t u b e</a></li>
       </ul>
     </nav>
   </main>
   <div class="corner-image">
     <!-- <img src="twoj-obrazek.png" alt="dryf kulis"> -->
   </div>
+  <div class="trailer-widget" id="trailerWidget">
+    <div class="trailer-label">Trailer albumu</div>
+    <video id="trailerVideo" src="trailer.mp4" poster="trailer-poster.jpg" controls muted></video>
+    <button class="trailer-btn" id="trailerBtn">Zobacz na YouTube</button>
+    <iframe class="trailer-youtube" id="trailerYT" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" allowfullscreen></iframe>
+  </div>
+  <script>
+    // Animacja wejścia linków
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        document.body.classList.add('loaded');
+      }, 120);
+    });
+    // Trailer widget - zamiana na YouTube
+    document.getElementById('trailerBtn').onclick = function() {
+      document.getElementById('trailerWidget').classList.add('active');
+    };
+  </script>
 </body>
 </html>
