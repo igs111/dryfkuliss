@@ -1,15 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400&display=swap');
 
 body {
   background: #eef7e6;
-  color: #3c52ee;
-  font-family: 'Asap Condensed', Arial, sans-serif;
-  font-style: italic;
-  font-weight: 600;
+  color: #232323;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 400;
   margin: 0;
   min-height: 100vh;
   box-sizing: border-box;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 body::before {
@@ -18,8 +22,8 @@ body::before {
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.18;
-  background: url('data:image/svg+xml;utf8,<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="300" height="300" filter="url(%23noiseFilter)"/></svg>');
+  opacity: 0.22;
+  background: url('data:image/svg+xml;utf8,<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch"/></filter><rect width="300" height="300" filter="url(%23noiseFilter)"/></svg>');
   background-size: 300px 300px;
   animation: noiseMove 1.5s steps(10) infinite;
 }
@@ -30,65 +34,80 @@ body::before {
 }
 
 header {
-  padding: 2rem 1.5rem 1rem 1.5rem;
+  padding: 0;
 }
 
 h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  font-family: 'Asap Condensed', Arial, sans-serif;
-  font-style: italic;
-  font-weight: 700;
-  letter-spacing: 2px;
+  margin: 0 0 2.5rem 0;
+  font-size: 6vw;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.1;
 }
 
 nav {
-  padding-left: 1.5rem;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav li {
-  margin-bottom: 0.7rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
 }
 
+nav li:nth-child(1) { left: 0.5rem; }
+nav li:nth-child(2) { left: 5vw; }
+nav li:nth-child(3) { left: -4vw; }
+nav li:nth-child(4) { left: 7vw; }
+nav li:nth-child(5) { left: -6vw; }
+nav li:nth-child(6) { left: 3vw; }
+
 nav a {
-  color: #3c52ee;
+  color: #232323;
   text-decoration: none;
-  font-size: 1.25rem;
-  font-family: 'Asap Condensed', Arial, sans-serif;
-  font-style: italic;
-  font-weight: 600;
-  transition: color 0.2s, filter 0.2s, transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), font-size 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+  font-size: 2.1vw;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  transition: color 0.2s, filter 0.2s, transform 0.7s cubic-bezier(.68,-0.55,.27,1.55);
   display: inline-block;
   position: relative;
   z-index: 1;
 }
 
 nav a:hover {
-  color: #6d7cff;
-  filter: brightness(1.2);
-  animation: wave 1.2s ease-in-out infinite;
-  font-size: 1.45rem;
-  transform: scale(1.08) rotate(-1.5deg);
+  color: #3c52ee;
+  filter: brightness(1.1);
+  animation: wave 1.5s ease-in-out 1;
 }
 
 @keyframes wave {
-  0% { transform: scale(1.08) rotate(-1.5deg) translateY(0); }
-  10% { transform: scale(1.09) rotate(-2deg) translateY(-1px); }
-  20% { transform: scale(1.1) rotate(-1deg) translateY(1px); }
-  30% { transform: scale(1.09) rotate(0deg) translateY(-2px); }
-  40% { transform: scale(1.08) rotate(1deg) translateY(2px); }
-  50% { transform: scale(1.09) rotate(2deg) translateY(-1px); }
-  60% { transform: scale(1.1) rotate(1deg) translateY(1px); }
-  70% { transform: scale(1.09) rotate(0deg) translateY(-2px); }
-  80% { transform: scale(1.08) rotate(-1deg) translateY(2px); }
-  90% { transform: scale(1.09) rotate(-2deg) translateY(-1px); }
-  100% { transform: scale(1.08) rotate(-1.5deg) translateY(0); }
+  0% { transform: translateY(0); }
+  10% { transform: translateY(-2px) rotate(-1deg); }
+  20% { transform: translateY(2px) rotate(1deg); }
+  30% { transform: translateY(-3px) rotate(-2deg); }
+  40% { transform: translateY(3px) rotate(2deg); }
+  50% { transform: translateY(-2px) rotate(-1deg); }
+  60% { transform: translateY(2px) rotate(1deg); }
+  70% { transform: translateY(-1px) rotate(-1deg); }
+  80% { transform: translateY(1px) rotate(1deg); }
+  90% { transform: translateY(-1px) rotate(-1deg); }
+  100% { transform: translateY(0); }
 }
 
 @keyframes shake {
@@ -147,31 +166,40 @@ main {
 
 .corner-image {
   position: fixed;
-  right: 2vw;
-  bottom: 2vw;
+  right: 0;
+  bottom: 0;
   z-index: 10;
-  max-width: 180px;
-  max-height: 180px;
-  opacity: 0.95;
+  width: 50vw;
+  height: 50vh;
+  max-width: none;
+  max-height: none;
+  opacity: 0.98;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  pointer-events: none;
 }
 
 .corner-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(60,82,238,0.13);
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
 }
 
 @media (max-width: 700px) {
-  main, nav, header {
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
+  h1 {
+    font-size: 2.2rem;
+  }
+  nav a {
+    font-size: 1.1rem;
   }
   .corner-image {
-    max-width: 100px;
-    max-height: 100px;
-    right: 1vw;
-    bottom: 1vw;
+    width: 90vw;
+    height: 30vh;
+    right: 0;
+    bottom: 0;
   }
 }
