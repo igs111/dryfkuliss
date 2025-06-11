@@ -174,11 +174,28 @@ h1 {
 
 @media (max-width: 700px) {
   h1 {
-    font-size: 2.2rem;
+    font-size: 1.3rem !important;
+    max-width: 90vw;
+    word-break: break-word;
+  }
+  .center-container {
+    width: 100vw;
+    height: 100vh;
   }
   .links-cloud a {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    max-width: 90vw;
+    padding: 0.08em 0.15em;
   }
+  .links-cloud a {
+    /* Przesunięcia linków bliżej środka na telefonie */
+  }
+  .links-cloud a#presave-link { top: 18% !important; left: 54% !important; }
+  .links-cloud a[href*="spotify"] { top: 32% !important; left: 70% !important; }
+  .links-cloud a[href*="apple"] { top: 60% !important; left: 35% !important; }
+  .links-cloud a[href*="tiktok"] { top: 75% !important; left: 50% !important; }
+  .links-cloud a[href*="instagram"] { top: 55% !important; left: 20% !important; }
+  .links-cloud a[href*="youtube"] { top: 25% !important; left: 15% !important; }
   .corner-image {
     width: 90vw;
     height: 30vh;
@@ -189,5 +206,6 @@ h1 {
     width: 98vw;
     right: 1vw;
     bottom: 1vw;
+    padding: 0.7em 0.2em 0.7em 0.2em;
   }
 }
