@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600&display=swap');
 
 body {
-  background: #eef7e6;
+  background: #fff;
   color: #232323;
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Syne', Arial, sans-serif;
   font-weight: 400;
   margin: 0;
   min-height: 100vh;
@@ -38,13 +38,15 @@ header {
 }
 
 h1 {
-  margin: 0 0 2.5rem 0;
-  font-size: 6vw;
-  font-family: 'Old Standard TT', serif;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  margin: 0 0 2vw 0;
+  font-size: 2.8vw;
+  font-family: 'Syne', Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-align: center;
   line-height: 1.1;
+  position: relative;
+  top: 8vw;
 }
 
 nav {
@@ -78,36 +80,24 @@ nav li:nth-child(5) { left: -6vw; }
 nav li:nth-child(6) { left: 3vw; }
 
 nav a {
-  color: #232323;
+  color: #444;
   text-decoration: none;
   font-size: 2.1vw;
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Syne', Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 0.04em;
-  transition: color 0.2s, filter 0.2s, transform 0.7s cubic-bezier(.68,-0.55,.27,1.55);
   display: inline-block;
   position: relative;
   z-index: 1;
+  transition: none;
 }
 
 nav a:hover {
-  color: #3c52ee;
-  filter: brightness(1.1);
-  animation: wave 1.5s ease-in-out 1;
-}
-
-@keyframes wave {
-  0% { transform: translateY(0); }
-  10% { transform: translateY(-2px) rotate(-1deg); }
-  20% { transform: translateY(2px) rotate(1deg); }
-  30% { transform: translateY(-3px) rotate(-2deg); }
-  40% { transform: translateY(3px) rotate(2deg); }
-  50% { transform: translateY(-2px) rotate(-1deg); }
-  60% { transform: translateY(2px) rotate(1deg); }
-  70% { transform: translateY(-1px) rotate(-1deg); }
-  80% { transform: translateY(1px) rotate(1deg); }
-  90% { transform: translateY(-1px) rotate(-1deg); }
-  100% { transform: translateY(0); }
+  color: #888;
+  filter: none;
+  background: none;
+  text-shadow: none;
+  animation: none;
 }
 
 @keyframes shake {
