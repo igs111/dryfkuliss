@@ -214,7 +214,7 @@ h1 {
     pointer-events: auto;
     white-space: pre-line;
   }
-  .links-cloud a#presave-link { top: 18% !important; left: 50% !important; transform: translateX(-50%) !important; }
+  .links-cloud a#presave-link { top: 18% !important; left: 45% !important; transform: translateX(-50%) !important; }
   .links-cloud a[href*="spotify"] { top: 32% !important; left: 70% !important; transform: translateX(-30%) !important; }
   .links-cloud a[href*="apple"] { top: 60% !important; left: 35% !important; transform: translateX(-10%) !important; }
   .links-cloud a[href*="tiktok"] { top: 75% !important; left: 50% !important; transform: translateX(-50%) !important; }
