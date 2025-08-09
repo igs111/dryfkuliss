@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>dryf kulis — linki</title>
+  <link rel="icon" href="ikona.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f0f9e9;
+      --primary: #4255e2;
+      --primary-2: #6e7ee4;
+      --muted: #6b7280;
+      --glass: rgba(0,0,0,0.04);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: var(--bg);
+      color: #091127;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+    }
+    .card{
+      width:min(820px, 92vw);
+      background:transparent;
+      text-align:center;
+      padding:40px 22px 28px;
+    }
+    h1{
+      font-size: clamp(22px, 4.4vw, 40px);
+      margin-bottom:10px;
+      letter-spacing: 1px;
+      font-weight:700;
+      text-transform: lowercase;
+      color: var(--primary);
+    }
+    p.lead{
+      margin-bottom:22px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .links{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      margin-top:6px;
+    }
+    .links a{
+      width:100%;
+      max-width:560px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 18px;
+      border-radius:12px;
+      text-decoration:none;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+      border: 1px solid var(--glass);
+      box-shadow: 0 6px 18px rgba(14,21,50,0.04);
+      color: #071034;
+      font-weight:600;
+      font-size:16px;
+      transition: all .25s ease;
+      letter-spacing:0.6px;
+    }
+    .links a .label{ text-align:left; }
+    .links a .hint{ font-size:12px; color:var(--muted); opacity:0.95; margin-left:12px; white-space:nowrap;}
+    .links a:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 18px 46px rgba(64,85,226,0.12);
+      background: linear-gradient(180deg, rgba(66,85,226,0.06), rgba(110,126,228,0.02));
+      border-color: rgba(66,85,226,0.12);
+    }
+    .links a.primary{
+      color: white;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      border: none;
+      box-shadow: 0 14px 36px rgba(66,85,226,0.18);
+      padding:18px 20px;
+    }
+    .links a.primary .hint{ color: rgba(255,255,255,0.9); }
+    @media (max-width:540px){
+      .links a{ padding:12px 14px; font-size:15px; border-radius:10px; }
+      .links{ gap:10px }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <h1>dryf kulis</h1>
+    <p class="lead">oficjalne linki — kliknij, żeby otworzyć</p>
+    <nav class="links" aria-label="Linki do serwisów">
+      <a class="primary" id="listen-here" href="#">
+        <span class="label">posłuchaj mnie tu</span>
+        <span class="hint">kliknij</span>
+      </a>
+      <div id="music-options" style="display:none;flex-direction:column;gap:10px;margin-top:8px;transition:all 0.3s ease;">
+        <a href="https://open.spotify.com/artist/0HCypyxxGMdbQxeGFpHUug" target="_blank" rel="noopener noreferrer"><span class="label">spotify</span></a>
+        <a href="https://music.apple.com/pl/artist/dryf-kulis/1819959583" target="_blank" rel="noopener noreferrer"><span class="label">apple music</span></a>
+        <a href="https://www.youtube.com/@dryfkulis" target="_blank" rel="noopener noreferrer"><span class="label">youtube</span></a>
+      </div>
+      <a href="https://www.instagram.com/dryfkulis/" target="_blank" rel="noopener noreferrer"><span class="label">instagram</span></a>
+      <a href="https://www.tiktok.com/@dryfkulis" target="_blank" rel="noopener noreferrer"><span class="label">tiktok</span></a>
+    </nav>
+  </main>
+  <script>
+    const listenLink = document.getElementById('listen-here');
+    const options = document.getElementById('music-options');
+    listenLink.addEventListener('click', e => {
+      e.preventDefault();
+      if(options.style.display === 'none'){
+        options.style.display = 'flex';
+        options.style.opacity = 0;
+        setTimeout(()=> options.style.opacity = 1, 10);
+      } else {
+        options.style.opacity = 0;
+        setTimeout(()=> options.style.display = 'none', 250);
+      }
+    });
+  </script>
+</body>
+</html>
