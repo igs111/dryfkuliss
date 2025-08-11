@@ -93,6 +93,11 @@
       .links a{ padding:12px 14px; font-size:15px; border-radius:10px; }
       .links{ gap:10px }
     }
+    iframe {
+      margin-top: 30px;
+      border-radius: 12px;
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -100,7 +105,20 @@
     <h1>dryf kulis</h1>
     <p class="lead">dryfuj</p>
     <nav class="links" aria-label="Linki do serwisów">
-      <a class="primary" id="listen-here" href="#">
+      
+      <!-- Nowe wydanie -->
+      <a class="primary" id="new-release" href="#">
+        <span class="label">nowe wydanie</span>
+        <span class="hint">kliknij</span>
+      </a>
+      <div id="new-release-options" style="display:none;flex-direction:column;gap:10px;margin-top:8px;transition:all 0.3s ease;">
+        <a href="https://open.spotify.com/album/3Kqwl8Xbd61VAvtEJI0Vzr?si=dVNGqH-ySMSOPZJzKQe6fw" target="_blank" rel="noopener noreferrer"><span class="label">spotify</span></a>
+        <a href="https://music.apple.com/zw/song/ekrany/1830352844" target="_blank" rel="noopener noreferrer"><span class="label">apple music</span></a>
+        <a href="https://www.youtube.com/watch?v=3CBTRCKcjW0" target="_blank" rel="noopener noreferrer"><span class="label">youtube (wideo)</span></a>
+      </div>
+
+      <!-- Posłuchaj mnie tu (bez niebieskiego stylu) -->
+      <a id="listen-here" href="#">
         <span class="label">posłuchaj mnie tu</span>
         <span class="hint">kliknij</span>
       </a>
@@ -109,24 +127,34 @@
         <a href="https://music.apple.com/pl/artist/dryf-kulis/1819959583" target="_blank" rel="noopener noreferrer"><span class="label">apple music</span></a>
         <a href="https://www.youtube.com/@dryfkulis" target="_blank" rel="noopener noreferrer"><span class="label">youtube</span></a>
       </div>
+
       <a href="https://www.instagram.com/dryfkulis/" target="_blank" rel="noopener noreferrer"><span class="label">instagram</span></a>
       <a href="https://www.tiktok.com/@dryfkulis" target="_blank" rel="noopener noreferrer"><span class="label">tiktok</span></a>
     </nav>
+
+    <!-- Wideo na dole -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3CBTRCKcjW0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
   </main>
+
   <script>
-    const listenLink = document.getElementById('listen-here');
-    const options = document.getElementById('music-options');
-    listenLink.addEventListener('click', e => {
-      e.preventDefault();
-      if(options.style.display === 'none'){
-        options.style.display = 'flex';
-        options.style.opacity = 0;
-        setTimeout(()=> options.style.opacity = 1, 10);
-      } else {
-        options.style.opacity = 0;
-        setTimeout(()=> options.style.display = 'none', 250);
-      }
-    });
+    function toggleMenu(buttonId, menuId) {
+      const button = document.getElementById(buttonId);
+      const menu = document.getElementById(menuId);
+      button.addEventListener('click', e => {
+        e.preventDefault();
+        if(menu.style.display === 'none'){
+          menu.style.display = 'flex';
+          menu.style.opacity = 0;
+          setTimeout(()=> menu.style.opacity = 1, 10);
+        } else {
+          menu.style.opacity = 0;
+          setTimeout(()=> menu.style.display = 'none', 250);
+        }
+      });
+    }
+
+    toggleMenu('listen-here', 'music-options');
+    toggleMenu('new-release', 'new-release-options');
   </script>
 </body>
 </html>
