@@ -1,99 +1,141 @@
+/* Reset i bazowe */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 body {
-  margin: 0;
-  background: #f7f6f4; /* kolor z referencji */
-  font-family: 'Cormorant Garamond', serif;
+  background: #f7f6f4; /* jasny, lekko kremowy */
   color: #000;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
+/* Linki wyglądające jak tekst */
+a { text-decoration: none; }
+a:link, a:visited { color: #000; }
+a:hover, a:focus { color: #231485; }
+
+/* Minimalna nawigacja */
 .nav {
   display: flex;
   justify-content: center;
   gap: 60px;
   padding: 20px;
-  font-size: 20px;
+  border-bottom: 1px solid #e7e7e7;
+  font-size: 22px; /* nieco większa */
+}
+.nav .ui {
+  transition: color 240ms ease, transform 240ms ease;
+}
+.nav .ui:hover, .nav .ui:focus {
+  transform: scale(0.97);
 }
 
-.nav a {
-  text-decoration: none;
-  color: #000;
-}
+/* Widoki */
+.view { display: none; }
+.view.active { display: block; }
 
-.view {
-  display: none;
-}
-
-.view.active {
-  display: block;
-}
-
+/* Hero: obraz kończy się dokładnie na dole okna (100vh) */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100vh;        /* pełna wysokość okna */
   overflow: hidden;
 }
-
 .bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;    /* wypełnia, zachowując proporcje */
   z-index: 0;
 }
 
+/* Statyczny centralny tytuł na obrazie — większy, bez hoverów */
 .title {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 120px;
-  font-weight: 600;
   margin: 0;
+  font-weight: 700;
+  font-size: clamp(96px, 14vw, 160px); /* DUŻE D i DUŻE K, reszta mała */
+  letter-spacing: 0.3px;
   z-index: 1;
-  pointer-events: none;
+  pointer-events: none; /* nie-klikalny, nie reaguje na hover */
 }
 
-.subtitle {
-  font-size: 36px;
-  margin: 40px 0 20px;
+/* Sekcje wewnętrzne (muzyka/wydanie/kontakt) */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
   text-align: center;
 }
 
-.links {
+.subtitle {
+  font-size: clamp(32px, 5vw, 48px);
+  margin: 20px 0 10px;
+}
+
+/* Rozstrzelone linki: lewy bardziej w lewo, prawy bardziej w prawo */
+.links-row {
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 20px 0;
-  font-size: 22px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 24px;
+  margin: 24px 0;
+}
+.links-row .ui {
+  font-size: 26px; /* większe linki */
+  transition: color 240ms ease, transform 240ms ease;
+}
+.links-row .ui:hover, .links-row .ui:focus {
+  transform: scale(0.97);
+  color: #231485;
+}
+.links-row .left { margin-left: 12px; }
+.links-row .right { margin-right: 12px; }
+
+/* Centralny napis w podstronach (statyczny, bez hovera) */
+.title-static {
+  margin: 10px 0;
+  font-weight: 700;
+  font-size: clamp(72px, 12vw, 120px);
+  letter-spacing: 0.3px;
 }
 
-.links a {
-  text-decoration: none;
-  color: #000;
-}
-
-form {
+/* Formularz kontaktowy */
+.contact-form {
+  width: min(720px, 92vw);
+  margin: 24px auto 0;
   display: grid;
-  gap: 20px;
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 0 20px;
+  gap: 16px;
+  text-align: left;
 }
-
+.label { font-size: 22px; }
 input, textarea {
   width: 100%;
-  padding: 12px;
+  padding: 12px 14px;
   font-size: 18px;
-  border: 1px solid #ccc;
+  border: 1px solid #dcd9d4;
+  background: #fff;
+  color: #000;
+  transition: border-color 240ms ease, transform 240ms ease;
 }
-
-button {
-  padding: 10px 20px;
-  font-size: 18px;
+input.ui:hover, textarea.ui:hover,
+input.ui:focus, textarea.ui:focus {
+  transform: scale(0.99);
+  border-color: #231485;
+}
+.btn {
+  border: 1px solid #000;
   background: #000;
   color: #fff;
-  border: none;
+  padding: 10px 16px;
+  font-size: 18px;
   cursor: pointer;
+  transition: background-color 240ms ease, transform 240ms ease;
+}
+.btn.ui:hover, .btn.ui:focus {
+  transform: scale(0.97);
+  background-color: #231485;
 }
