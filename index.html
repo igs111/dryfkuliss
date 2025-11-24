@@ -3,67 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DRYF KULIS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
+  <title>Dryf Kulis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav class="nav">
-    <a href="#" data-view="muzyka" class="ui">muzyka</a>
-    <a href="#" data-view="wydanie" class="ui">nowe wydanie</a>
-    <a href="#" data-view="kontakt" class="ui">kontakt</a>
+    <a href="#" data-view="home">muzyka</a>
+    <a href="#" data-view="release">nowe wydanie</a>
+    <a href="#" data-view="contact">kontakt</a>
   </nav>
 
-  <div id="loader" class="loader hidden">
-    <div class="hourglass">
-      <div class="sand top"></div>
-      <div class="sand stream"></div>
-      <div class="sand bottom"></div>
-    </div>
-  </div>
-
   <main id="home" class="view active">
-    <section class="hero">
-      <div class="hero-bg">
-        <img src="spoti pfp.png" alt="DRYF KULIS" />
-        <h1 class="brand">DRYF KULIS</h1>
-      </div>
-    </section>
-  </main>
-
-  <main id="muzyka" class="view">
-    <div class="links-group top">
-      <a href="#" class="ui left">Spotify</a>
-      <a href="#" class="ui">Apple Music</a>
-      <a href="#" class="ui right">Bandcamp</a>
-    </div>
-    <h1 class="brand">DRYF KULIS</h1>
-    <div class="links-group bottom">
-      <a href="#" class="ui left">YouTube</a>
-      <a href="#" class="ui">Instagram</a>
-      <a href="#" class="ui right">TikTok</a>
+    <div class="hero">
+      <img src="spoti pfp.png" alt="Tło" class="bg" />
+      <h1 class="title">Dryf Kulis</h1>
     </div>
   </main>
 
-  <main id="wydanie" class="view">
-    <h2 class="release-title">Tytuł piosenki</h2>
-    <div class="release-links">
-      <a href="#" class="ui left">Spotify</a>
-      <a href="#" class="ui">Apple Music</a>
-      <a href="#" class="ui right">Bandcamp</a>
+  <main id="release" class="view">
+    <h2 class="subtitle">Tytuł piosenki</h2>
+    <div class="links">
+      <a href="#">Spotify</a>
+      <a href="#">Apple Music</a>
+      <a href="#">Bandcamp</a>
     </div>
-    <h1 class="brand">DRYF KULIS</h1>
-    <div class="release-bottom">
-      <a href="#" class="ui">Klip na YouTube</a>
+    <h1 class="title">Dryf Kulis</h1>
+    <div class="links">
+      <a href="#">Klip na YouTube</a>
     </div>
   </main>
 
-  <main id="kontakt" class="view">
-    <h2>Kontakt</h2>
+  <main id="contact" class="view">
+    <h2 class="subtitle">Kontakt</h2>
     <form id="contactForm">
-      <input type="email" name="email" placeholder="Twój email" required class="ui" />
-      <textarea name="message" placeholder="Wiadomość" required class="ui"></textarea>
-      <button type="submit" class="btn ui">Wyślij</button>
+      <input type="email" name="email" placeholder="Twój email" required />
+      <textarea name="message" placeholder="Wiadomość" required></textarea>
+      <button type="submit">Wyślij</button>
     </form>
   </main>
 
