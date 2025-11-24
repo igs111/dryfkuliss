@@ -4,59 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DRYF KULIS</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&display=swap" rel="stylesheet" />
+  <!-- Cormorant Garamond: elegancki szeryf z wysokim kontrastem -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav class="nav">
-    <a href="#" data-view="muzyka">muzyka</a>
-    <a href="#" data-view="wydanie">nowe wydanie</a>
-    <a href="#" data-view="kontakt">kontakt</a>
+    <a href="#" data-view="muzyka" class="ui">muzyka</a>
+    <a href="#" data-view="wydanie" class="ui">nowe wydanie</a>
+    <a href="#" data-view="kontakt" class="ui">kontakt</a>
   </nav>
 
+  <!-- Loader -->
   <div id="loader" class="loader hidden">
-    <div class="hourglass"></div>
-    <p>ładowanie…</p>
+    <div class="hourglass" aria-hidden="true"></div>
+    <p class="muted">ładowanie…</p>
   </div>
 
+  <!-- STRONA GŁÓWNA: obraz 3500x3500 + centralny tytuł -->
   <main id="home" class="view active">
-    <h1>DRYF KULIS</h1>
+    <section class="hero">
+      <div class="hero-image">
+        <img src="spoti pfp.png" alt="DRYF KULIS — obraz" />
+      </div>
+      <h1 class="brand ui">DRYF KULIS</h1>
+    </section>
   </main>
 
+  <!-- MUZYKA -->
   <main id="muzyka" class="view">
-    <div class="media top">
-      <a href="#">Spotify</a>
-      <a href="#">Apple Music</a>
-      <a href="#">Bandcamp</a>
-    </div>
-    <h1>DRYF KULIS</h1>
-    <div class="media bottom">
-      <a href="#">YouTube</a>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-    </div>
+    <section class="stack">
+      <div class="links-group top">
+        <span class="ui">Spotify</span>
+        <span class="ui">Apple Music</span>
+        <span class="ui">Bandcamp</span>
+      </div>
+      <h1 class="brand ui">DRYF KULIS</h1>
+      <div class="links-group bottom">
+        <span class="ui">YouTube</span>
+        <span class="ui">Instagram</span>
+        <span class="ui">TikTok</span>
+      </div>
+    </section>
   </main>
 
+  <!-- NOWE WYDANIE -->
   <main id="wydanie" class="view">
-    <h2>Tytuł piosenki</h2>
-    <div class="media top">
-      <a href="#">Spotify</a>
-      <a href="#">Apple Music</a>
-      <a href="#">Bandcamp</a>
-    </div>
-    <h1>DRYF KULIS</h1>
-    <div class="media bottom">
-      <a href="#">Klip na YouTube</a>
-    </div>
+    <section class="stack">
+      <div class="release-top">
+        <h2 class="release-title ui">Tytuł piosenki</h2>
+        <div class="release-links">
+          <span class="ui">Spotify</span>
+          <span class="ui">Apple Music</span>
+          <span class="ui">Bandcamp</span>
+        </div>
+      </div>
+      <h1 class="brand ui">DRYF KULIS</h1>
+      <div class="release-bottom">
+        <span class="ui">Otwórz klip na YouTube</span>
+      </div>
+    </section>
   </main>
 
+  <!-- KONTAKT -->
   <main id="kontakt" class="view">
-    <h2>Kontakt</h2>
-    <form id="contactForm">
-      <input type="email" name="email" placeholder="Twój email" required />
-      <textarea name="message" placeholder="Wiadomość" required></textarea>
-      <button type="submit">Wyślij</button>
-    </form>
+    <section class="stack contact">
+      <h2 class="section-title">Kontakt</h2>
+      <form id="contactForm" class="contact-form" novalidate>
+        <label>
+          <span class="label">Twój email</span>
+          <input type="email" name="email" required placeholder="twoj@email.com" class="ui" />
+        </label>
+        <label>
+          <span class="label">Wiadomość</span>
+          <textarea name="message" rows="6" required placeholder="Napisz, o co chodzi…" class="ui"></textarea>
+        </label>
+        <button type="submit" class="btn ui">Wyślij</button>
+      </form>
+      <p class="muted note">Odpowiem tak szybko, jak to możliwe.</p>
+    </section>
   </main>
 
   <script src="app.js"></script>
