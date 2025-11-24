@@ -4,65 +4,57 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DRYF KULIS</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <a href="#" data-route="muzyka">muzyka</a>
-      <a href="#" data-route="wydanie">nowe wydanie</a>
-      <a href="#" data-route="kontakt">kontakt</a>
-    </nav>
-  </header>
+  <nav class="nav">
+    <a href="#" data-view="muzyka">muzyka</a>
+    <a href="#" data-view="wydanie">nowe wydanie</a>
+    <a href="#" data-view="kontakt">kontakt</a>
+  </nav>
 
-  <!-- Loader -->
   <div id="loader" class="loader hidden">
     <div class="hourglass"></div>
     <p>ładowanie…</p>
   </div>
 
-  <!-- Widok główny -->
-  <main id="view-home" class="view active">
-    <h1 class="brand">DRYF KULIS</h1>
+  <main id="home" class="view active">
+    <h1>DRYF KULIS</h1>
   </main>
 
-  <!-- Muzyka -->
-  <main id="view-music" class="view">
-    <div class="links-group top">
+  <main id="muzyka" class="view">
+    <div class="media top">
       <a href="#">Spotify</a>
       <a href="#">Apple Music</a>
       <a href="#">Bandcamp</a>
     </div>
-    <h1 class="brand">DRYF KULIS</h1>
-    <div class="links-group bottom">
+    <h1>DRYF KULIS</h1>
+    <div class="media bottom">
       <a href="#">YouTube</a>
       <a href="#">Instagram</a>
       <a href="#">TikTok</a>
     </div>
   </main>
 
-  <!-- Nowe wydanie -->
-  <main id="view-release" class="view">
-    <h2 class="release-title">Tytuł piosenki</h2>
-    <div class="release-links">
+  <main id="wydanie" class="view">
+    <h2>Tytuł piosenki</h2>
+    <div class="media top">
       <a href="#">Spotify</a>
       <a href="#">Apple Music</a>
       <a href="#">Bandcamp</a>
     </div>
-    <h1 class="brand">DRYF KULIS</h1>
-    <div class="release-bottom">
-      <a href="#">Otwórz klip na YouTube</a>
+    <h1>DRYF KULIS</h1>
+    <div class="media bottom">
+      <a href="#">Klip na YouTube</a>
     </div>
   </main>
 
-  <!-- Kontakt -->
-  <main id="view-contact" class="view">
+  <main id="kontakt" class="view">
     <h2>Kontakt</h2>
     <form id="contactForm">
-      <label>Email <input type="email" name="email" required /></label>
-      <label>Wiadomość <textarea name="message" required></textarea></label>
+      <input type="email" name="email" placeholder="Twój email" required />
+      <textarea name="message" placeholder="Wiadomość" required></textarea>
       <button type="submit">Wyślij</button>
     </form>
   </main>
