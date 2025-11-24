@@ -14,7 +14,7 @@ function loadThenShow(id) {
   }, 2000);
 }
 
-document.querySelectorAll('.nav .ui').forEach(link => {
+document.querySelectorAll('.nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const id = link.getAttribute('data-view');
@@ -26,21 +26,8 @@ document.querySelectorAll('.nav .ui').forEach(link => {
   });
 });
 
-// Kontakt — prosta walidacja
 document.getElementById('contactForm')?.addEventListener('submit', e => {
   e.preventDefault();
-  const fd = new FormData(e.target);
-  const email = String(fd.get('email') || '').trim();
-  const message = String(fd.get('message') || '').trim();
-
-  const errors = [];
-  if (!/^\S+@\S+\.\S+$/.test(email)) errors.push('Podaj poprawny email.');
-  if (message.length < 3) errors.push('Wpisz krótką wiadomość.');
-
-  if (errors.length) {
-    alert('Sprawdź formularz:\n• ' + errors.join('\n• '));
-    return;
-  }
   alert('Dziękuję! Wkrótce odpiszę.');
   e.target.reset();
 });
