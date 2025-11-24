@@ -15,9 +15,9 @@ body {
 }
 
 .nav a {
-  text-decoration: none; /* usuwa podkreślenie */
+  text-decoration: none;
   color: #000;
-  font-size: 22px; /* większy tekst */
+  font-size: 22px;
   transition: color 300ms ease, transform 300ms ease;
 }
 
@@ -26,23 +26,42 @@ body {
   color: #231485;
 }
 
-.view { display: none; padding: 60px 20px; }
+.view { display: none; }
 .view.active { display: block; }
 
-h1.brand {
-  font-size: 72px;
-  margin: 40px 0;
+.hero-bg {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-h2.release-title {
-  font-size: 36px;
-  margin-bottom: 20px;
+.hero-bg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-bg .brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 72px;
+  margin: 0;
+  transition: color 300ms ease, transform 300ms ease;
+}
+
+.brand:hover {
+  transform: scale(0.95);
+  color: #231485;
 }
 
 .links-group {
   display: flex;
-  justify-content: space-between; /* roztrzep na boki */
-  margin: 20px 0;
+  justify-content: space-between;
+  margin: 40px 0;
+  padding: 0 40px;
 }
 
 .links-group a {
@@ -60,7 +79,7 @@ h2.release-title {
 .release-links {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 20px 40px;
 }
 
 .release-links a {
