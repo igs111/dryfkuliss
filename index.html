@@ -4,43 +4,73 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dryf Kulis</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav class="nav">
-    <a href="#" data-view="home">muzyka</a>
-    <a href="#" data-view="release">nowe wydanie</a>
-    <a href="#" data-view="contact">kontakt</a>
+    <a href="#" data-view="muzyka" class="ui">muzyka</a>
+    <a href="#" data-view="wydanie" class="ui">nowe wydanie</a>
+    <a href="#" data-view="kontakt" class="ui">kontakt</a>
   </nav>
 
+  <!-- Widok główny: obraz wypełnia wysokość, tytuł na środku -->
   <main id="home" class="view active">
-    <div class="hero">
+    <section class="hero">
       <img src="spoti pfp.png" alt="Tło" class="bg" />
-      <h1 class="title">Dryf Kulis</h1>
-    </div>
+      <h1 class="title" aria-hidden="true">Dryf Kulis</h1>
+    </section>
   </main>
 
-  <main id="release" class="view">
-    <h2 class="subtitle">Tytuł piosenki</h2>
-    <div class="links">
-      <a href="#">Spotify</a>
-      <a href="#">Apple Music</a>
-      <a href="#">Bandcamp</a>
-    </div>
-    <h1 class="title">Dryf Kulis</h1>
-    <div class="links">
-      <a href="#">Klip na YouTube</a>
-    </div>
+  <!-- Muzyka: 3 linki rozstrzelone na górze i dole, centralny tytuł -->
+  <main id="muzyka" class="view">
+    <section class="section">
+      <div class="links-row">
+        <a href="#" class="ui left">Spotify</a>
+        <a href="#" class="ui">Apple Music</a>
+        <a href="#" class="ui right">Bandcamp</a>
+      </div>
+      <h1 class="title-static">Dryf Kulis</h1>
+      <div class="links-row">
+        <a href="#" class="ui left">YouTube</a>
+        <a href="#" class="ui">Instagram</a>
+        <a href="#" class="ui right">TikTok</a>
+      </div>
+    </section>
   </main>
 
-  <main id="contact" class="view">
-    <h2 class="subtitle">Kontakt</h2>
-    <form id="contactForm">
-      <input type="email" name="email" placeholder="Twój email" required />
-      <textarea name="message" placeholder="Wiadomość" required></textarea>
-      <button type="submit">Wyślij</button>
-    </form>
+  <!-- Nowe wydanie -->
+  <main id="wydanie" class="view">
+    <section class="section">
+      <h2 class="subtitle">Tytuł piosenki</h2>
+      <div class="links-row">
+        <a href="#" class="ui left">Spotify</a>
+        <a href="#" class="ui">Apple Music</a>
+        <a href="#" class="ui right">Bandcamp</a>
+      </div>
+      <h1 class="title-static">Dryf Kulis</h1>
+      <div class="links-row">
+        <a href="#" class="ui">Klip na YouTube</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Kontakt -->
+  <main id="kontakt" class="view">
+    <section class="section">
+      <h2 class="subtitle">Kontakt</h2>
+      <form id="contactForm" class="contact-form" novalidate>
+        <label>
+          <span class="label">Twój email</span>
+          <input type="email" name="email" required placeholder="twoj@email.com" class="ui" />
+        </label>
+        <label>
+          <span class="label">Wiadomość</span>
+          <textarea name="message" rows="6" required placeholder="Napisz, o co chodzi…" class="ui"></textarea>
+        </label>
+        <button type="submit" class="btn ui">Wyślij</button>
+      </form>
+    </section>
   </main>
 
   <script src="app.js"></script>
