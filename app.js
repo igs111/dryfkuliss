@@ -1,32 +1,30 @@
-const routes = {
-  home: document.getElementById('view-home'),
-  music: document.getElementById('view-music'),
-  release: document.getElementById('view-release'),
-  contact: document.getElementById('view-contact'),
-};
+const views = document.querySelectorAll('.view');
 const loader = document.getElementById('loader');
 
-function showView(viewKey) {
-  Object.values(routes).forEach(v => v.classList.remove('active'));
-  routes[viewKey].classList.add('active');
+function showView(id) {
+  views.forEach(v => v.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
 
-function withLoader(nextViewKey) {
+function loadThenShow(id) {
   loader.classList.remove('hidden');
   setTimeout(() => {
     loader.classList.add('hidden');
-    showView(nextViewKey);
+    showView(id);
   }, 2000);
 }
 
 document.querySelectorAll('.nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
-    const key = e.target.getAttribute('data-route');
-    if (key === 'muzyka') withLoader('music');
-    else if (key === 'wydanie') withLoader('release');
-    else if (key === 'kontakt') showView('contact');
+    const id = link.getAttribute('data-view');
+    if (id === 'kontakt') showView(id);
+    else loadThenShow(id);
   });
 });
 
-showView('home');
+document.getElementById('contactForm')?.addEventListener('submit', e => {
+  e.preventDefault();
+  alert('Dziękuję! Skontaktuję się wkrótce.');
+  e.target.reset();
+});
