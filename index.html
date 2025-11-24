@@ -4,8 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DRYF KULIS</title>
-  <!-- Cormorant Garamond: elegancki szeryf z wysokim kontrastem -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,72 +16,60 @@
 
   <!-- Loader -->
   <div id="loader" class="loader hidden">
-    <div class="hourglass" aria-hidden="true"></div>
-    <p class="muted">ładowanie…</p>
+    <div class="hourglass">
+      <div class="sand top"></div>
+      <div class="sand stream"></div>
+      <div class="sand bottom"></div>
+    </div>
   </div>
 
-  <!-- STRONA GŁÓWNA: obraz 3500x3500 + centralny tytuł -->
+  <!-- Strona główna -->
   <main id="home" class="view active">
     <section class="hero">
       <div class="hero-image">
-        <img src="spoti pfp.png" alt="DRYF KULIS — obraz" />
+        <img src="spoti pfp.png" alt="DRYF KULIS" />
       </div>
-      <h1 class="brand ui">DRYF KULIS</h1>
+      <h1 class="brand">DRYF KULIS</h1>
     </section>
   </main>
 
-  <!-- MUZYKA -->
+  <!-- Muzyka -->
   <main id="muzyka" class="view">
-    <section class="stack">
-      <div class="links-group top">
-        <span class="ui">Spotify</span>
-        <span class="ui">Apple Music</span>
-        <span class="ui">Bandcamp</span>
-      </div>
-      <h1 class="brand ui">DRYF KULIS</h1>
-      <div class="links-group bottom">
-        <span class="ui">YouTube</span>
-        <span class="ui">Instagram</span>
-        <span class="ui">TikTok</span>
-      </div>
-    </section>
+    <div class="links-group top">
+      <a href="#" class="ui left">Spotify</a>
+      <a href="#" class="ui">Apple Music</a>
+      <a href="#" class="ui right">Bandcamp</a>
+    </div>
+    <h1 class="brand">DRYF KULIS</h1>
+    <div class="links-group bottom">
+      <a href="#" class="ui left">YouTube</a>
+      <a href="#" class="ui">Instagram</a>
+      <a href="#" class="ui right">TikTok</a>
+    </div>
   </main>
 
-  <!-- NOWE WYDANIE -->
+  <!-- Nowe wydanie -->
   <main id="wydanie" class="view">
-    <section class="stack">
-      <div class="release-top">
-        <h2 class="release-title ui">Tytuł piosenki</h2>
-        <div class="release-links">
-          <span class="ui">Spotify</span>
-          <span class="ui">Apple Music</span>
-          <span class="ui">Bandcamp</span>
-        </div>
-      </div>
-      <h1 class="brand ui">DRYF KULIS</h1>
-      <div class="release-bottom">
-        <span class="ui">Otwórz klip na YouTube</span>
-      </div>
-    </section>
+    <h2 class="release-title">Tytuł piosenki</h2>
+    <div class="release-links">
+      <a href="#" class="ui left">Spotify</a>
+      <a href="#" class="ui">Apple Music</a>
+      <a href="#" class="ui right">Bandcamp</a>
+    </div>
+    <h1 class="brand">DRYF KULIS</h1>
+    <div class="release-bottom">
+      <a href="#" class="ui">Klip na YouTube</a>
+    </div>
   </main>
 
-  <!-- KONTAKT -->
+  <!-- Kontakt -->
   <main id="kontakt" class="view">
-    <section class="stack contact">
-      <h2 class="section-title">Kontakt</h2>
-      <form id="contactForm" class="contact-form" novalidate>
-        <label>
-          <span class="label">Twój email</span>
-          <input type="email" name="email" required placeholder="twoj@email.com" class="ui" />
-        </label>
-        <label>
-          <span class="label">Wiadomość</span>
-          <textarea name="message" rows="6" required placeholder="Napisz, o co chodzi…" class="ui"></textarea>
-        </label>
-        <button type="submit" class="btn ui">Wyślij</button>
-      </form>
-      <p class="muted note">Odpowiem tak szybko, jak to możliwe.</p>
-    </section>
+    <h2>Kontakt</h2>
+    <form id="contactForm">
+      <input type="email" name="email" placeholder="Twój email" required class="ui" />
+      <textarea name="message" placeholder="Wiadomość" required class="ui"></textarea>
+      <button type="submit" class="btn ui">Wyślij</button>
+    </form>
   </main>
 
   <script src="app.js"></script>
