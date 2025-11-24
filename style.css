@@ -1,9 +1,8 @@
 body {
   margin: 0;
-  background: #fff;
-  color: #000;
+  background: #f7f6f4; /* kolor z referencji */
   font-family: 'Cormorant Garamond', serif;
-  text-align: center;
+  color: #000;
 }
 
 .nav {
@@ -11,94 +10,76 @@ body {
   justify-content: center;
   gap: 60px;
   padding: 20px;
-  border-bottom: 1px solid #ddd;
+  font-size: 20px;
 }
 
 .nav a {
   text-decoration: none;
   color: #000;
-  font-size: 22px;
-  transition: color 300ms ease, transform 300ms ease;
 }
 
-.nav a:hover {
-  transform: scale(0.95);
-  color: #231485;
+.view {
+  display: none;
 }
 
-.view { display: none; }
-.view.active { display: block; }
-
-.hero-bg {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.hero-bg img {
-  width: 100%;
-  height: auto;
+.view.active {
   display: block;
 }
 
-.hero-bg .brand {
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.title {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 72px;
+  font-size: 120px;
+  font-weight: 600;
   margin: 0;
-  transition: color 300ms ease, transform 300ms ease;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.brand:hover {
-  transform: scale(0.95);
-  color: #231485;
+.subtitle {
+  font-size: 36px;
+  margin: 40px 0 20px;
+  text-align: center;
 }
 
-.links-group {
+.links {
   display: flex;
-  justify-content: space-between;
-  margin: 40px 0;
-  padding: 0 40px;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+  font-size: 22px;
 }
 
-.links-group a {
+.links a {
   text-decoration: none;
   color: #000;
-  font-size: 24px;
-  transition: color 300ms ease, transform 300ms ease;
-}
-
-.links-group a:hover {
-  transform: scale(0.95);
-  color: #231485;
-}
-
-.release-links {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 40px;
-}
-
-.release-links a {
-  text-decoration: none;
-  color: #000;
-  font-size: 24px;
-  transition: color 300ms ease, transform 300ms ease;
-}
-
-.release-links a:hover {
-  transform: scale(0.95);
-  color: #231485;
 }
 
 form {
   display: grid;
   gap: 20px;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 input, textarea {
@@ -106,12 +87,6 @@ input, textarea {
   padding: 12px;
   font-size: 18px;
   border: 1px solid #ccc;
-  transition: border-color 300ms ease, transform 300ms ease;
-}
-
-input:hover, textarea:hover, input:focus, textarea:focus {
-  transform: scale(0.98);
-  border-color: #231485;
 }
 
 button {
@@ -121,78 +96,4 @@ button {
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: background-color 300ms ease, transform 300ms ease;
-}
-
-button:hover {
-  transform: scale(0.95);
-  background-color: #231485;
-}
-
-/* Loader */
-.loader {
-  position: fixed;
-  inset: 0;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.loader.hidden { display: none; }
-
-.hourglass {
-  width: 40px;
-  height: 60px;
-  position: relative;
-  border: 2px solid #000;
-  border-radius: 8px;
-  animation: rotate 4s infinite linear;
-}
-
-.sand {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  background: #000;
-}
-
-.sand.top {
-  top: 0;
-  height: 50%;
-  animation: drain 4s infinite linear;
-}
-
-.sand.stream {
-  top: 50%;
-  height: 4%;
-  animation: stream 1s infinite ease-in-out;
-}
-
-.sand.bottom {
-  bottom: 0;
-  height: 0%;
-  animation: fill 4s infinite linear;
-}
-
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes drain {
-  0% { height: 50%; }
-  100% { height: 5%; }
-}
-
-@keyframes fill {
-  0% { height: 5%; }
-  100% { height: 50%; }
-}
-
-@keyframes stream {
-  0%,100% { opacity: 0; }
-  50% { opacity: 1; }
 }
