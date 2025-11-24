@@ -1,168 +1,62 @@
-/* Paleta i typografia — minimalistyczna, elegancka */
 :root {
-  --bg: #f7f6f4;
-  --ink: #0b0b0b;
-  --muted: #4a4a4a;
-  --line: #dcd9d4;
-  --accent: #0b0b0b;
+  --bg: #ffffff;
+  --ink: #000000;
+  --muted: #555555;
 }
 
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
-body { font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-
-.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-/* Nawigacja u góry */
-.site-header { position: sticky; top: 0; background: rgba(247,246,244,0.8); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); z-index: 20; }
-.nav { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 64px; align-items: center; }
-.nav-link { text-align: center; text-decoration: none; color: var(--ink); font-family: "EB Garamond", Georgia, serif; font-size: 18px; letter-spacing: 0.2px; }
-.nav-link:hover { text-decoration: underline; }
-
-/* Widoki */
-.view { display: none; min-height: calc(100vh - 64px - 60px); }
-.view.active { display: grid; place-items: center; }
-.center { display: grid; place-items: center; text-align: center; padding: 40px 20px; }
-
-/* Brand — centralny napis */
-.brand {
-  font-family: "EB Garamond", Georgia, serif;
-  font-weight: 700;
-  font-size: clamp(40px, 8vw, 96px);
-  line-height: 0.95;
-  letter-spacing: 0.5px;
-  margin: 20px 0;
-}
-
-/* Linki mediów (3 nad i 3 pod) */
-.links-group { display: flex; gap: 24px; margin: 16px 0; }
-.links-group.top { margin-bottom: 24px; }
-.links-group.bottom { margin-top: 24px; }
-.media-link { color: var(--ink); text-decoration: none; font-family: "EB Garamond", Georgia, serif; font-size: 20px; }
-.media-link:hover { text-decoration: underline; }
-
-/* Wydanie: górny i dolny blok */
-.release-top { display: grid; gap: 12px; margin-bottom: 24px; }
-.release-title {
-  font-family: "EB Garamond", Georgia, serif;
-  font-weight: 700;
-  font-size: clamp(24px, 4vw, 40px);
+body {
   margin: 0;
-}
-.release-links { display: flex; gap: 24px; justify-content: center; }
-.release-bottom { margin-top: 24px; }
-
-/* Formularz kontaktowy */
-.section-title {
-  font-family: "EB Garamond", Georgia, serif;
-  font-size: clamp(28px, 4.5vw, 48px);
-  margin: 0 0 12px;
-}
-.contact-form { width: min(720px, 92vw); display: grid; gap: 16px; }
-.contact-form label { display: grid; gap: 8px; text-align: left; }
-.contact-form span { font-family: "EB Garamond", Georgia, serif; font-size: 18px; }
-input, textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  background: #fff;
+  background: var(--bg);
   color: var(--ink);
-  font-size: 16px;
-  border-radius: 6px;
+  font-family: "EB Garamond", serif;
 }
-input:focus, textarea:focus { outline: 2px solid #bfb9b0; outline-offset: 2px; }
-.btn {
-  appearance: none;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
-.btn:hover { filter: contrast(1.05); }
-.note { color: var(--muted); margin-top: 8px; }
 
-/* Loader z klepsydrą (gładki, rozmyty, motion blur) */
+.site-header {
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+.nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.brand {
+  font-size: 72px;
+  text-align: center;
+  margin: 100px 0;
+}
+
+.view { display: none; text-align: center; }
+.view.active { display: block; }
+
+.links-group { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+.release-links { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+
 .loader {
   position: fixed;
   inset: 0;
-  display: grid;
-  place-items: center;
-  background: rgba(247,246,244,0.82);
-  backdrop-filter: blur(8px);
-  z-index: 100;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .loader.hidden { display: none; }
-.loading-text {
-  margin-top: 16px;
-  font-family: "EB Garamond", Georgia, serif;
-  color: var(--muted);
-}
 
-/* Klepsydra */
 .hourglass {
-  width: 90px;
-  height: 140px;
-  filter: blur(0.3px);
-  animation: wobble 2.2s ease-in-out infinite;
-}
-@keyframes wobble {
-  0%, 100% { transform: rotate(0deg) translateZ(0); }
-  50% { transform: rotate(8deg) translateZ(0); }
-}
-.glass {
+  width: 40px;
+  height: 60px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
   position: relative;
-  width: 100%;
-  height: 100%;
-  border: 2px solid rgba(11,11,11,0.8);
-  border-radius: 12px;
-  clip-path: polygon(0% 0%, 100% 0%, 78% 50%, 100% 100%, 0% 100%, 22% 50%);
-  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-  overflow: hidden;
+  animation: flip 2s infinite;
 }
-
-/* Piasek: górny, strumień, dolny */
-.sand { position: absolute; left: 0; width: 100%; background: rgba(11,11,11,0.85); }
-.sand.top {
-  top: 0; height: 46%;
-  animation: top-drain 2s linear infinite;
-  filter: blur(0.6px);
-}
-@keyframes top-drain {
-  0% { height: 46%; }
-  100% { height: 10%; }
-}
-.sand.stream {
-  top: 45%; height: 0.5%; filter: blur(2px);
-  animation: stream-flow 2s ease-in-out infinite;
-}
-@keyframes stream-flow {
-  0% { height: 0.5%; opacity: 0.6; }
-  50% { height: 2.2%; opacity: 1; }
-  100% { height: 0.5%; opacity: 0.6; }
-}
-.sand.bottom {
-  bottom: 0; height: 10%;
-  animation: bottom-fill 2s linear infinite;
-  filter: blur(0.5px);
-}
-@keyframes bottom-fill {
-  0% { height: 10%; }
-  100% { height: 44%; }
-}
-
-/* Delikatny motion blur przy obrocie */
-.hourglass { will-change: transform; }
-.glass { will-change: clip-path; }
-
-/* Stopka */
-.site-footer { border-top: 1px solid var(--line); height: 60px; display: grid; place-items: center; color: var(--muted); }
-
-/* Responsywność */
-@media (max-width: 900px) {
-  .media-link { font-size: 18px; }
-  .release-links { flex-wrap: wrap; gap: 16px; }
+@keyframes flip {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
 }
