@@ -14,17 +14,33 @@ function loadThenShow(id) {
   }, 2000);
 }
 
-document.querySelectorAll('.nav a').forEach(link => {
+document.querySelectorAll('.nav .ui').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const id = link.getAttribute('data-view');
-    if (id === 'kontakt') showView(id);
-    else loadThenShow(id);
+    if (id === 'kontakt') {
+      showView(id);
+    } else {
+      loadThenShow(id);
+    }
   });
 });
 
+// Kontakt — prosta walidacja
 document.getElementById('contactForm')?.addEventListener('submit', e => {
   e.preventDefault();
-  alert('Dziękuję! Skontaktuję się wkrótce.');
+  const fd = new FormData(e.target);
+  const email = String(fd.get('email') || '').trim();
+  const message = String(fd.get('message') || '').trim();
+
+  const errors = [];
+  if (!/^\S+@\S+\.\S+$/.test(email)) errors.push('Podaj poprawny email.');
+  if (message.length < 3) errors.push('Wpisz krótką wiadomość.');
+
+  if (errors.length) {
+    alert('Sprawdź formularz:\n• ' + errors.join('\n• '));
+    return;
+  }
+  alert('Dziękuję! Wkrótce odpiszę.');
   e.target.reset();
 });
