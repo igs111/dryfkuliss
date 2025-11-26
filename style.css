@@ -1,0 +1,167 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: white;
+    font-family: Arial, sans-serif;
+}
+
+/* ---------------- NAV ---------------- */
+
+nav {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    font-size: 20px;
+}
+
+.nav-btn {
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.nav-btn:hover {
+    color: #0f2972;
+    transform: scale(0.9);
+}
+
+/* ---------------- HOME ---------------- */
+
+.bg-img {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.center-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 80px;
+    letter-spacing: 5px;
+}
+
+/* ---------------- PAGES ---------------- */
+
+.page {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    text-align: center;
+}
+
+.page.active {
+    display: block;
+}
+
+.sub-title {
+    margin-top: 150px;
+    font-size: 60px;
+    letter-spacing: 5px;
+}
+
+.links-block {
+    margin-top: 60px;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.lower {
+    margin-top: 40px;
+}
+
+.cool-link {
+    text-decoration: none;
+    color: black;
+    transition: 0.25s;
+}
+
+.cool-link:hover {
+    color: #0f2972;
+    transform: scale(0.9);
+}
+
+.home-btn {
+    margin-top: 80px;
+    padding: 15px 40px;
+    font-size: 30px;
+    cursor: pointer;
+    border: none;
+    background: #0f2972;
+    color: white;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    transform: scale(0.9);
+    background: black;
+}
+
+/* ---------------- CONTACT ---------------- */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    margin: 40px auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    font-size: 20px;
+    border: 2px solid #0f2972;
+}
+
+contact-form button {
+    padding: 15px;
+    font-size: 22px;
+}
+
+/* ---------------- LOADER ---------------- */
+
+#loader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    top: 0; left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 60px;
+    z-index: 1000;
+}
+
+.dots {
+    animation: blink 0.5s infinite alternate;
+}
+
+.count {
+    margin-top: 20px;
+    animation: countAnim 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { color: black; }
+    100% { color: #0f2972; }
+}
+
+@keyframes countAnim {
+    0% { color: #0f2972; }
+    50% { color: black; }
+    100% { color: #0f2972; }
+}
