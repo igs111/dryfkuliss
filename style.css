@@ -30,7 +30,18 @@ nav a:hover {
     color: #001c5a;
 }
 
-/* USUNIĘTO background-img */
+/* FULLSCREEN IMAGE */
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("spoti pfp.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
 
 /* MAIN TITLE */
 #mainTitle {
