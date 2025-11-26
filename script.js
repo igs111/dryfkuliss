@@ -1,21 +1,30 @@
-function showLoader(callback) {
-    const loader = document.getElementById("loader");
+const links = document.querySelectorAll(".nav-link, .home-btn");
+const sections = document.querySelectorAll(".section");
+const loader = document.getElementById("loader");
+const mainTitle = document.getElementById("mainTitle");
 
-    loader.style.display = "flex";
+function showSection(name) {
+    loader.classList.add("active");
 
     setTimeout(() => {
-        loader.style.display = "none";
-        callback();
-    }, 1500); // 1.5 sekundy
+        sections.forEach(sec => sec.classList.remove("active"));
+        document.getElementById(name).classList.add("active");
+
+        if (name === "home") {
+            mainTitle.style.opacity = "1";
+        } else if (name === "kontakt") {
+            mainTitle.style.opacity = "0.4";
+        } else {
+            mainTitle.style.opacity = "1";
+        }
+
+        loader.classList.remove("active");
+    }, 1500);
 }
 
-function goToPage(id) {
-    showLoader(() => {
-        document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-        document.getElementById(id).classList.add("active");
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        const target = link.getAttribute("data-target");
+        showSection(target);
     });
-}
-
-function home() {
-    goToPage("home");
-}
+});
