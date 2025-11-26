@@ -6,23 +6,22 @@
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-/* NAVIGATION */
 nav {
     position: fixed;
     top: 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 40px;
     z-index: 5;
 }
 
 nav a {
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     transition: 0.25s ease;
 }
 
@@ -31,12 +30,29 @@ nav a:hover {
     color: #001c5a;
 }
 
+/* FULLSCREEN IMAGE */
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("spoti pfp.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
 /* MAIN TITLE */
 #mainTitle {
-    margin-top: 120px;
-    font-size: 48px;
-    letter-spacing: 6px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    letter-spacing: 8px;
     text-align: center;
+    z-index: 3;
     transition: opacity 0.3s ease;
 }
 
@@ -49,21 +65,24 @@ nav a:hover {
     display: block;
 }
 
-/* CONTENT */
+/* CONTENT SECTIONS */
 .content {
-    margin-top: 40px;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
 .links-top, .links-bottom {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin: 20px 0;
+    gap: 50px;
+    margin: 25px 0;
 }
 
 .link {
-    font-size: 22px;
+    font-size: 28px;
     cursor: pointer;
     transition: 0.25s ease;
 }
@@ -75,7 +94,10 @@ nav a:hover {
 
 /* CONTACT */
 .contact-box {
-    margin: 100px auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 360px;
     text-align: center;
 }
@@ -107,8 +129,10 @@ nav a:hover {
 
 /* HOME BUTTON */
 .home-btn {
-    display: block;
-    margin: 30px auto;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     cursor: pointer;
     font-size: 18px;
 }
@@ -134,25 +158,22 @@ nav a:hover {
 }
 
 .dots span {
-    font-size: 40px;
+    font-size: 50px;
     animation: wave 1.5s infinite ease-in-out;
     display: inline-block;
     margin: 0 5px;
 }
 
-.dots span:nth-child(2) { animation-delay: 0.2s; }
-.dots span:nth-child(3) { animation-delay: 0.4s; }
+.dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
 
 @keyframes wave {
     0% { transform: translateY(0); color: black; }
     50% { transform: translateY(-18px); color: #001c5a; }
     100% { transform: translateY(0); color: black; }
-}
-
-/* MOBILE OPTIMIZATION */
-@media (max-width: 768px) {
-    nav a { font-size: 14px; }
-    #mainTitle { font-size: 32px; letter-spacing: 3px; }
-    .link { font-size: 18px; }
-    .contact-box { width: 90%; }
 }
