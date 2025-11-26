@@ -1,23 +1,28 @@
-// LOADING EFFECT (wraca!)
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
+const links = document.querySelectorAll(".nav-link, .home-btn");
+const sections = document.querySelectorAll(".section");
+const loader = document.getElementById("loader");
+const mainTitle = document.getElementById("mainTitle");
+
+function showSection(name) {
+    loader.classList.add("active");
+
     setTimeout(() => {
-        loader.style.display = "none";
-    }, 1500);
-});
+        sections.forEach(sec => sec.classList.remove("active"));
+        document.getElementById(name).classList.add("active");
 
-// ———————————————————————————
-//   DYNAMIC OPACITY FOR DRYFKULIS
-// ———————————————————————————
-function setActivePage(page) {
-    document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
-    document.getElementById(page).classList.add("active");
+        if (name === "kontakt") {
+            mainTitle.style.opacity = "0";
+        } else {
+            mainTitle.style.opacity = "1";
+        }
 
-    const drif = document.getElementById("drifkulis");
-
-    if (page === "kontakt") {
-        drif.style.opacity = "0.40";  // tylko tu 40%
-    } else {
-        drif.style.opacity = "1";     // wszędzie indziej 100%
-    }
+        loader.classList.remove("active");
+    }, 900);
 }
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        const target = link.getAttribute("data-target");
+        showSection(target);
+    });
+});
