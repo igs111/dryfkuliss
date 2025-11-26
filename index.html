@@ -1,78 +1,85 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DRYF KULIS</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRYF KULIS</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div id="loader" aria-hidden="true">
-    <div class="dots" role="img" aria-label="loading">
-      <span>.</span><span>.</span><span>.</span>
+<div id="loader">
+    <div class="dots">
+        <span>.</span><span>.</span><span>.</span>
     </div>
-  </div>
+</div>
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-link" data-target="home" href="#">muzyka</a>
-    <a class="nav-link" data-target="muzyka" href="#" style="visibility:hidden;position:absolute;">spacer</a><!-- placeholder for center alignment -->
-    <a class="nav-link" data-target="durnedzbanie" href="#">durnedzbanie</a>
-    <a class="nav-link" data-target="kontakt" href="#">kontakt</a>
-  </nav>
+<nav>
+    <a class="nav-link" data-target="muzyka">muzyka</a>
+    <a class="nav-link" data-target="durnedzbanie">durnedzbanie</a>
+    <a class="nav-link" data-target="kontakt">kontakt</a>
+</nav>
 
-  <!-- MAIN TITLE (centered; changes text per section) -->
-  <h1 id="mainTitle">DRYF KULIS</h1>
+<div class="background-img"></div>
 
-  <!-- SECTIONS -->
-  <section id="home" class="section active"></section>
+<h1 id="mainTitle">DRYF KULIS</h1>
 
-  <section id="muzyka" class="section">
+<!-- HOME -->
+<section id="home" class="section active">
+</section>
+
+<!-- MUZYKA -->
+<section id="muzyka" class="section">
     <div class="content">
-      <div class="links-top">
-        <a class="link" href="#">YouTube</a>
-        <a class="link" href="#">Spotify</a>
-        <a class="link" href="#">Apple Music</a>
-      </div>
-      <div class="links-bottom">
-        <a class="link" href="#">Instagram</a>
-        <a class="link" href="#">TikTok</a>
-        <a class="link" href="#">Bandcamp</a>
-      </div>
-    </div>
-    <button class="home-btn nav-link" data-target="home">home</button>
-  </section>
+        <div class="links-top">
+            <a class="link">YouTube</a>
+            <a class="link">Spotify</a>
+            <a class="link">Apple Music</a>
+        </div>
 
-  <section id="durnedzbanie" class="section">
+        <div class="links-bottom">
+            <a class="link">Instagram</a>
+            <a class="link">TikTok</a>
+            <a class="link">Bandcamp</a>
+        </div>
+    </div>
+
+    <a class="home-btn" data-target="home">home</a>
+</section>
+
+<!-- DURNEDZBANIE -->
+<section id="durnedzbanie" class="section">
     <div class="content">
-      <div class="links-top">
-        <a class="link" href="#">YouTube</a>
-        <a class="link" href="#">Spotify</a>
-        <a class="link" href="#">Apple Music</a>
-      </div>
-      <div class="links-bottom">
-        <a class="link" href="#">Instagram</a>
-        <a class="link" href="#">TikTok</a>
-        <a class="link" href="#">Bandcamp</a>
-      </div>
-    </div>
-    <button class="home-btn nav-link" data-target="home">home</button>
-  </section>
+        <div class="links-top">
+            <a class="link">YouTube</a>
+            <a class="link">Spotify</a>
+            <a class="link">Apple Music</a>
+        </div>
 
-  <section id="kontakt" class="section">
+        <div class="links-bottom">
+            <a class="link">Instagram</a>
+            <a class="link">TikTok</a>
+            <a class="link">Bandcamp</a>
+        </div>
+    </div>
+
+    <a class="home-btn" data-target="home">home</a>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="section">
     <div class="contact-box">
-      <h2>Napisz do mnie</h2>
-      <form id="contactForm">
-        <input id="email" type="email" placeholder="Twój email" required>
-        <textarea id="message" placeholder="Twoja wiadomość" required></textarea>
-        <button type="submit">Wyślij</button>
-      </form>
+        <h2>Napisz do mnie</h2>
+        <form>
+            <input type="email" placeholder="Twój email" required>
+            <textarea placeholder="Twoja wiadomość" required></textarea>
+            <button type="submit">Wyślij</button>
+        </form>
     </div>
-    <button class="home-btn nav-link" data-target="home">home</button>
-  </section>
 
-  <script src="script.js"></script>
+    <a class="home-btn" data-target="home">home</a>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
