@@ -30,18 +30,6 @@ nav a:hover {
     color: #001c5a;
 }
 
-/* FULLSCREEN IMAGE */
-.background-img {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("spoti pfp.png");
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-}
 
 /* MAIN TITLE */
 #mainTitle {
@@ -68,17 +56,27 @@ nav a:hover {
 /* CONTENT SECTIONS */
 .content {
     position: fixed;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 4;
 }
 
+/* LINK ROWS — SYMETRIA */
 .links-top, .links-bottom {
     display: flex;
     justify-content: center;
     gap: 50px;
-    margin: 25px 0;
+}
+
+/* RÓWNE ODBICIE WZGLĘDEM DRYF KULIS */
+.links-top {
+    margin-bottom: 120px;   /* ODLEGŁOŚĆ NAD TYTUŁEM */
+}
+
+.links-bottom {
+    margin-top: 120px;      /* IDENTYCZNA ODLEGŁOŚĆ POD TYTUŁEM */
 }
 
 .link {
