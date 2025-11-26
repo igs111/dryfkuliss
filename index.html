@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRIFT KULIS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader">
+    <div class="dots">...</div>
+    <div class="count">3</div>
+</div>
+
+<nav>
+    <span class="nav-btn" onclick="goToPage('muzyka')">MUZYKA</span>
+    <span class="nav-btn" onclick="goToPage('dzbanie')">DURNE DZBANIE</span>
+    <span class="nav-btn" onclick="goToPage('kontakt')">KONTAKT</span>
+</nav>
+
+<section id="home" class="page active">
+    <img src="spoti pfp.png" class="bg-img">
+    <h1 class="center-title">DRIFT KULIS</h1>
+</section>
+
+<section id="muzyka" class="page">
+    <h1 class="sub-title">DRIFT KULIS</h1>
+
+    <div class="links-block">
+        <a href="#" class="cool-link">YouTube</a>
+        <a href="#" class="cool-link">Spotify</a>
+        <a href="#" class="cool-link">Apple Music</a>
+    </div>
+
+    <div class="links-block lower">
+        <a href="#" class="cool-link">Instagram</a>
+        <a href="#" class="cool-link">TikTok</a>
+        <a href="#" class="cool-link">Bandcamp</a>
+    </div>
+
+    <button class="home-btn" onclick="home()">HOME</button>
+</section>
+
+<section id="dzbanie" class="page">
+    <h1 class="sub-title">DRIFT KULIS</h1>
+
+    <div class="links-block">
+        <a href="#" class="cool-link">YouTube</a>
+        <a href="#" class="cool-link">Spotify</a>
+        <a href="#" class="cool-link">Apple Music</a>
+    </div>
+
+    <button class="home-btn" onclick="home()">HOME</button>
+</section>
+
+<section id="kontakt" class="page">
+    <h1 class="sub-title">KONTAKT</h1>
+
+    <form class="contact-form">
+        <input type="email" placeholder="Twój email" required>
+        <textarea placeholder="Twoja wiadomość" required></textarea>
+        <button type="submit">Wyślij</button>
+    </form>
+
+    <button class="home-btn" onclick="home()">HOME</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
