@@ -19,7 +19,7 @@ function showSection(name) {
         }
 
         loader.classList.remove("active");
-    }, 1000); // skróciłem czas ładowania dla lepszego UX
+    }, 1500);
 }
 
 links.forEach(link => {
