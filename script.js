@@ -10,16 +10,10 @@ function showSection(name) {
         sections.forEach(sec => sec.classList.remove("active"));
         document.getElementById(name).classList.add("active");
 
-        if (name === "home") {
-            mainTitle.style.opacity = "1";
-        } else if (name === "kontakt") {
-            mainTitle.style.opacity = "0.4";
-        } else {
-            mainTitle.style.opacity = "1";
-        }
+        mainTitle.style.opacity = "1";
 
         loader.classList.remove("active");
-    }, 1500);
+    }, 1300);
 }
 
 links.forEach(link => {
