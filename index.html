@@ -3,73 +3,88 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DRYF KULIS</title>
+    <title>Dryf Kulis</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<div id="loader">
-    <div class="dots">
-        <span>.</span><span>.</span><span>.</span>
-    </div>
-</div>
-
-<nav>
-    <a class="nav-link" data-target="muzyka">muzyka</a>
-    <a class="nav-link" data-target="durnedzbanie">durnedzbanie</a>
-    <a class="nav-link" data-target="kontakt">kontakt</a>
-</nav>
-
-<h1 id="mainTitle">DRYF KULIS</h1>
-
-<section id="home" class="section active"></section>
-
-<section id="muzyka" class="section">
-    <div class="content">
-        <div class="links-top">
-            <a class="link">YouTube</a>
-            <a class="link">Spotify</a>
-            <a class="link">Apple Music</a>
-        </div>
-        <div class="links-bottom">
-            <a class="link">Instagram</a>
-            <a class="link">TikTok</a>
-            <a class="link">Bandcamp</a>
-        </div>
-    </div>
-    <a class="home-btn" data-target="home">home</a>
-</section>
-
-<section id="durnedzbanie" class="section">
-    <div class="content">
-        <div class="links-top">
-            <a class="link">YouTube</a>
-            <a class="link">Spotify</a>
-            <a class="link">Apple Music</a>
-        </div>
-        <div class="links-bottom">
-            <a class="link">Instagram</a>
-            <a class="link">TikTok</a>
-            <a class="link">Bandcamp</a>
-        </div>
-    </div>
-    <a class="home-btn" data-target="home">home</a>
-</section>
-
-<section id="kontakt" class="section">
-    <div class="contact-box">
-        <h2>Napisz do mnie</h2>
-
-        <form>
-            <input type="email" placeholder="Twój email" required>
-            <textarea placeholder="Twoja wiadomość" required></textarea>
-            <button type="submit">Wyślij</button>
-        </form>
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-circle"></div>
     </div>
 
-    <a class="home-btn" data-target="home">home</a>
-</section>
+    <!-- BLUE FLOATS -->
+    <div id="float1" class="blue-float"></div>
+    <div id="float2" class="blue-float"></div>
 
-<script src="script.js"></script>
+    <!-- NAVIGATION -->
+    <nav>
+        <a id="muzyka" href="#" onclick="switchSection('muzyka'); setActivePage('muzyka')">muzyka</a>
+        <a id="dumetdzbanie" href="#" onclick="switchSection('dumetdzbanie'); setActivePage('dumetdzbanie')">dumetdzbanie</a>
+        <a id="kontakt" href="#" onclick="switchSection('kontakt'); setActivePage('kontakt')">kontakt</a>
+    </nav>
+
+    <!-- CENTERED DRYF KULIS ICON -->
+    <img id="drifkulis" src="spoti pfp.png" alt="Dryf Kulis">
+
+    <!-- CONTENT WRAPPER -->
+    <div id="center-box">
+
+        <!-- MUZYKA -->
+        <section id="s_muzyka" class="section">
+            <h1>DRYF KULIS</h1>
+            <br><br>
+            <div class="links">
+                <a href="#">YouTube</a>
+                <a href="#">Spotify</a>
+                <a href="#">Apple Music</a>
+            </div>
+            <br>
+            <div class="links">
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="#">Bandcamp</a>
+            </div>
+        </section>
+
+        <!-- DUMETDZBANIE -->
+        <section id="s_dumetdzbanie" class="section" style="display:none;">
+            <h1>dumetdzbanie</h1>
+            <p>Tu wchodzi treść dumetdzbanie</p>
+        </section>
+
+        <!-- KONTAKT -->
+        <section id="s_kontakt" class="section" style="display:none;">
+            <h1>kontakt</h1>
+
+            <br>
+            <form>
+                <input type="text" placeholder="Twoje imię" style="width:100%;padding:10px;margin-bottom:10px;">
+                <textarea placeholder="Wiadomość"
+                    style="width:100%;height:150px;padding:10px;margin-bottom:10px;"></textarea>
+                <button type="submit" style="padding:10px 20px;">Wyślij</button>
+            </form>
+
+            <br><br>
+            <p>Tu możesz dodać dodatkowe informacje kontaktowe.</p>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Switch content sections
+        function switchSection(name) {
+            document.querySelectorAll(".section").forEach(s => s.style.display = "none");
+            document.getElementById("s_" + name).style.display = "block";
+        }
+
+        // Default view
+        switchSection("muzyka");
+        setActivePage("muzyka");
+    </script>
+
 </body>
 </html>
