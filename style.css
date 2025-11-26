@@ -7,8 +7,10 @@
 
 body {
     overflow: hidden;
+    background: #f4f4f4; /* obraz usunięty */
 }
 
+/* NAV */
 nav {
     position: fixed;
     top: 20px;
@@ -16,34 +18,16 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
-    z-index: 5;
+    z-index: 10;
 }
 
 nav a {
     cursor: pointer;
     font-size: 20px;
-    transition: 0.25s ease;
+    transition: 0.25s;
 }
 
-nav a:hover {
-    transform: scale(0.92);
-    color: #001c5a;
-}
-
-/* FULLSCREEN IMAGE */
-.background-img {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("spoti pfp.png");
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-}
-
-/* MAIN TITLE */
+/* TITLE (always centered) */
 #mainTitle {
     position: fixed;
     top: 50%;
@@ -51,9 +35,9 @@ nav a:hover {
     transform: translate(-50%, -50%);
     font-size: 80px;
     letter-spacing: 8px;
+    z-index: 5;
     text-align: center;
-    z-index: 3;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s;
 }
 
 /* SECTIONS */
@@ -65,13 +49,13 @@ nav a:hover {
     display: block;
 }
 
-/* CONTENT SECTIONS */
+/* MUZYKA / DURNEDZBANIE LAYOUT */
 .content {
     position: fixed;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
 }
 
 .links-top, .links-bottom {
@@ -81,25 +65,32 @@ nav a:hover {
     margin: 25px 0;
 }
 
+.links-top {
+    margin-bottom: 120px; /* NAD DRYF KULIS */
+}
+
+.links-bottom {
+    margin-top: 120px; /* POD DRYF KULIS */
+}
+
 .link {
     font-size: 28px;
     cursor: pointer;
-    transition: 0.25s ease;
-}
-
-.link:hover {
-    transform: scale(0.92);
-    color: #001c5a;
+    transition: 0.25s;
 }
 
 /* CONTACT */
+#kontakt #mainTitle {
+    opacity: 1 !important;
+}
+
 .contact-box {
     position: fixed;
-    top: 50%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 360px;
-    text-align: center;
+    width: 340px;
+    z-index: 4;
 }
 
 .contact-box input,
@@ -108,33 +99,34 @@ nav a:hover {
     padding: 12px;
     margin-top: 12px;
     border-radius: 8px;
-    border: 2px solid #000000;
+    border: 2px solid black;
+    font-size: 16px;
+    white-space: normal !important;
+}
+
+.contact-box textarea {
+    height: 140px;
+    resize: vertical;
 }
 
 .contact-box button {
-    margin-top: 18px;
     width: 100%;
+    margin-top: 15px;
     padding: 12px;
-    background: #001c5a;
+    border-radius: 8px;
+    background: black;
     color: white;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    transition: 0.25s;
-}
-
-.contact-box button:hover {
-    transform: scale(0.95);
 }
 
 /* HOME BUTTON */
 .home-btn {
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    cursor: pointer;
-    font-size: 18px;
+    z-index: 5;
 }
 
 /* LOADER */
@@ -146,10 +138,10 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 20;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: 0.4s;
 }
 
 #loader.active {
@@ -159,21 +151,47 @@ nav a:hover {
 
 .dots span {
     font-size: 50px;
-    animation: wave 1.5s infinite ease-in-out;
-    display: inline-block;
-    margin: 0 5px;
+    animation: wave 1.4s infinite ease-in-out;
+    margin: 0 6px;
 }
 
-.dots span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.dots span:nth-child(3) {
-    animation-delay: 0.4s;
-}
+.dots span:nth-child(2) { animation-delay: .15s; }
+.dots span:nth-child(3) { animation-delay: .3s; }
 
 @keyframes wave {
     0% { transform: translateY(0); color: black; }
     50% { transform: translateY(-18px); color: #001c5a; }
     100% { transform: translateY(0); color: black; }
 }
+
+/* ----- MOBILE OPTIMIZATION ----- */
+@media (max-width: 600px) {
+
+    #mainTitle {
+        font-size: 46px;
+        letter-spacing: 4px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .links-top, .links-bottom {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .links-top { margin-bottom: 60px; }
+    .links-bottom { margin-top: 60px; }
+
+    .link {
+        font-size: 22px;
+    }
+
+    .contact-box {
+        width: 85%;
+        top: 60%;
+    }
+
+    .home-btn {
+        bottom: 12px;
