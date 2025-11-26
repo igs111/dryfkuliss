@@ -10,12 +10,12 @@ body, html {
 
 nav {
     position: absolute;
-    top: 20px;
+    top: 25px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 40px;
-    font-size: 20px;
+    padding: 0 50px;
+    font-size: 22px;
 }
 
 .nav-btn {
@@ -45,8 +45,9 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;
-    font-size: 80px;
-    letter-spacing: 5px;
+    font-size: 85px;
+    letter-spacing: 6px;
+    text-align: center;
 }
 
 /* ---------------- PAGES ---------------- */
@@ -57,6 +58,7 @@ nav {
     height: 100vh;
     background: white;
     text-align: center;
+    padding-top: 120px;
 }
 
 .page.active {
@@ -64,21 +66,20 @@ nav {
 }
 
 .sub-title {
-    margin-top: 150px;
-    font-size: 60px;
+    font-size: 65px;
     letter-spacing: 5px;
 }
 
 .links-block {
-    margin-top: 60px;
+    margin-top: 70px;
     display: flex;
-    gap: 60px;
+    gap: 80px;
     justify-content: center;
-    font-size: 40px;
+    font-size: 32px;
 }
 
 .lower {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .cool-link {
@@ -93,41 +94,62 @@ nav {
 }
 
 .home-btn {
-    margin-top: 80px;
-    padding: 15px 40px;
-    font-size: 30px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 28px;
+    font-size: 20px;
     cursor: pointer;
     border: none;
     background: #0f2972;
     color: white;
     transition: 0.3s;
+    border-radius: 8px;
 }
 
 .home-btn:hover {
-    transform: scale(0.9);
+    transform: translateX(-50%) scale(0.92);
     background: black;
 }
 
-/* ---------------- CONTACT ---------------- */
+/* ---------------- CONTACT FORM ---------------- */
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 50%;
+    width: 45%;
     margin: 40px auto;
+    gap: 15px;
+    font-size: 20px;
 }
 
 .contact-form input,
 .contact-form textarea {
     padding: 15px;
-    font-size: 20px;
+    font-size: 18px;
     border: 2px solid #0f2972;
+    border-radius: 10px;
 }
 
-contact-form button {
+textarea {
+    height: 140px;
+}
+
+.send-btn {
     padding: 15px;
     font-size: 22px;
+    background: #0f2972;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    transform: scale(0.95);
+    background: black;
 }
 
 /* ---------------- LOADER ---------------- */
@@ -141,27 +163,18 @@ contact-form button {
     display: none;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    font-size: 60px;
     z-index: 1000;
 }
 
-.dots {
-    animation: blink 0.5s infinite alternate;
+.wave {
+    font-size: 90px;
+    animation: wave 1.5s ease-in-out;
 }
 
-.count {
-    margin-top: 20px;
-    animation: countAnim 1.5s infinite;
-}
-
-@keyframes blink {
-    0% { color: black; }
-    100% { color: #0f2972; }
-}
-
-@keyframes countAnim {
-    0% { color: #0f2972; }
-    50% { color: black; }
-    100% { color: #0f2972; }
+@keyframes wave {
+    0%   { transform: translateY(0); color: black; }
+    25%  { transform: translateY(-15px); color: #0f2972; }
+    50%  { transform: translateY(5px); }
+    75%  { transform: translateY(-10px); color: #0f2972; }
+    100% { transform: translateY(0); color: black; }
 }
