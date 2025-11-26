@@ -193,59 +193,54 @@ nav a:hover {
     100% { transform: translateY(0); color: black; }
 }
 
-/* === RESPONSYWNOŚĆ NA TELEFONIE === */
+/* === LEPSZA RESPONSYWNOŚĆ — WYGLĄD IDENTYCZNY JAK NA DESKTOPIE, TYLKO MNIEJSZY === */
 @media (max-width: 768px) {
 
-    body {
-        overflow: auto;
-    }
-
     nav {
-        top: 10px;
-        padding: 0 20px;
+        top: 15px;
+        padding: 0 25px;
+        justify-content: space-between;
     }
 
     nav a {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     #mainTitle {
-        font-size: 42px;
-        letter-spacing: 3px;
-        top: 48%;
+        font-size: 48px;
+        letter-spacing: 5px;
+        top: 50%;
     }
 
     .content {
-        width: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
-    .links-top, .links-bottom {
-        gap: 25px;
+    .links-top, 
+    .links-bottom {
+        gap: 30px;
     }
 
     .links-top {
-        margin-bottom: 60px;
+        margin-bottom: 80px; /* było 120 */
     }
 
     .links-bottom {
-        margin-top: 60px;
+        margin-top: 80px; /* było 120 */
     }
 
     .link {
         font-size: 22px;
     }
 
-    .contact-box {
-        width: 280px;
-    }
-
     .home-btn {
-        bottom: 10px;
-        font-size: 16px;
+        bottom: 20px;
+        font-size: 18px;
     }
 
-    /* loader dots on mobile */
-    .dots span {
-        font-size: 40px;
+    /* kontakt */
+    .contact-box {
+        width: 300px;
     }
 }
