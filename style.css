@@ -24,16 +24,16 @@ nav {
 nav a {
     cursor: pointer;
     font-size: 20px;
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
-/* ✔️ NIEBIESKA ANIMACJA LINKÓW */
+/* HOVER GLOW B */
 nav a:hover,
 .link:hover,
 .home-btn:hover {
-    color: #0040ff;
-    transform: scale(1.08);
-    text-shadow: 0 0 10px #6a8cff;
+    color: #0037b3;
+    text-shadow: 0 0 12px rgba(0, 55, 179, 0.6);
+    transform: scale(0.96);
 }
 
 /* TITLE */
@@ -46,23 +46,19 @@ nav a:hover,
     letter-spacing: 8px;
     z-index: 5;
     text-align: center;
-    transition: opacity 0.3s;
-}
-
-/* Hide title in kontakt */
-#kontakt.active ~ #mainTitle {
-    opacity: 0 !important;
+    transition: opacity 0.4s;
 }
 
 /* SECTIONS */
 .section {
     display: none;
 }
+
 .section.active {
     display: block;
 }
 
-/* MUZYKA / DURNEDZBANIE */
+/* ROZKŁAD LINKÓW */
 .content {
     position: fixed;
     width: 100%;
@@ -75,7 +71,7 @@ nav a:hover,
     display: flex;
     justify-content: center;
     gap: 50px;
-    margin: 25px 0;
+    margin: 30px 0;
 }
 
 .links-top { margin-bottom: 120px; }
@@ -84,16 +80,20 @@ nav a:hover,
 .link {
     font-size: 28px;
     cursor: pointer;
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
-/* CONTACT */
+/* KONTAKT */
+#kontakt #mainTitle {
+    opacity: 0 !important;
+}
+
 .contact-box {
     position: fixed;
-    top: 58%;
+    top: 54%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 340px;
+    width: 360px;
     z-index: 4;
 }
 
@@ -105,10 +105,11 @@ nav a:hover,
     border-radius: 8px;
     border: 2px solid black;
     font-size: 16px;
+    white-space: pre-line;
 }
 
 .contact-box textarea {
-    height: 140px;
+    height: 150px;
     resize: vertical;
 }
 
@@ -130,11 +131,10 @@ nav a:hover,
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
-    cursor: pointer;
-    transition: 0.25s;
+    font-size: 20px;
 }
 
-/* ✔️ NOWY LOADER – NIEBIESKA ANIMACJA KOŁA */
+/* LOADER — WAVE (1) */
 #loader {
     position: fixed;
     top: 0; left: 0;
@@ -146,7 +146,7 @@ nav a:hover,
     z-index: 20;
     opacity: 0;
     pointer-events: none;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 #loader.active {
@@ -154,17 +154,19 @@ nav a:hover,
     pointer-events: all;
 }
 
-.loader-circle {
-    width: 70px;
-    height: 70px;
-    border: 6px solid #001c5a30;
-    border-top-color: #001c5a;
-    border-radius: 50%;
-    animation: spin 0.9s linear infinite;
+.dots span {
+    font-size: 55px;
+    animation: wave 1.4s infinite ease-in-out;
+    margin: 0 6px;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.dots span:nth-child(2) { animation-delay: .15s; }
+.dots span:nth-child(3) { animation-delay: .3s; }
+
+@keyframes wave {
+    0% { transform: translateY(0); color: black; }
+    50% { transform: translateY(-18px); color: #001c5a; }
+    100% { transform: translateY(0); color: black; }
 }
 
 /* MOBILE */
