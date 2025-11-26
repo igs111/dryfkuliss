@@ -9,6 +9,17 @@ body {
     overflow: hidden;
 }
 
+/* RESET STYLÓW LINKÓW */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+/* NAVIGATION */
 nav {
     position: fixed;
     top: 20px;
@@ -29,7 +40,6 @@ nav a:hover {
     transform: scale(0.92);
     color: #001c5a;
 }
-
 
 /* MAIN TITLE */
 #mainTitle {
@@ -70,19 +80,26 @@ nav a:hover {
     gap: 50px;
 }
 
-/* RÓWNE ODBICIE WZGLĘDEM DRYF KULIS */
+/* ODBICIE WZGLĘDEM GŁÓWNEGO TYTUŁU */
 .links-top {
-    margin-bottom: 120px;   /* ODLEGŁOŚĆ NAD TYTUŁEM */
+    margin-bottom: 120px;
 }
 
 .links-bottom {
-    margin-top: 120px;      /* IDENTYCZNA ODLEGŁOŚĆ POD TYTUŁEM */
+    margin-top: 120px;
 }
 
+/* INDYWIDUALNE LINKI */
 .link {
     font-size: 28px;
     cursor: pointer;
     transition: 0.25s ease;
+    text-decoration: none; /* usuwa podkreślenie */
+    color: black; /* usuwa niebieski */
+}
+
+.link:visited {
+    color: black; /* usuwa fioletowy */
 }
 
 .link:hover {
@@ -118,7 +135,7 @@ nav a:hover {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
 .contact-box button:hover {
